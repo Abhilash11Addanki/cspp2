@@ -4,14 +4,13 @@ import java.util.Scanner;
  */
 final class AreaOfCircle {
     /**
-     * { item_description }.
+     * AreaOfCircle constructor.
      */
     private AreaOfCircle() {
 
     }
     /**
-     * { function_description }.
-     *
+     * main method.
      * @param      args  The arguments.
      */
     public static void main(final String[] args) {
@@ -20,8 +19,7 @@ final class AreaOfCircle {
         System.out.println(area(r));
     }
     /**
-     * { function_description }.
-     *
+     * pi method.
      * @return     { description_of_the_return_value }.
      */
     static double pi() {
@@ -29,10 +27,8 @@ final class AreaOfCircle {
         return pi;
     }
     /**
-     * { function_description }.
-     *
+     * area method.
      * @param      radius  The radius.
-     *
      * @return     { description_of_the_return_value }.
      */
     static double area(final int radius) {
