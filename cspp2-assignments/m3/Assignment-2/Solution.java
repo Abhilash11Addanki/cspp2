@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 /**
  * Class for solution.
@@ -15,9 +16,10 @@ public final class Solution {
  */
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
-        int a, cnt = 0, ten = 10, seven = 7;
+        int a, cnt = 0; 
+        final int ten = 10, seven = 7;
         for (int i = 1; i <= n; i++) {
             int j = i;
             while (j > 0) {
