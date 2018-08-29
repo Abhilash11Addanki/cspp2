@@ -18,7 +18,7 @@ public final class Solution {
 
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
-        int a, cnt = 0; 
+        int a, cnt = 0;
         final int ten = 10, seven = 7;
         for (int i = 1; i <= n; i++) {
             int j = i;
