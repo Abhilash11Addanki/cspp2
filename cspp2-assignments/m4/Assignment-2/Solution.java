@@ -19,6 +19,7 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         String[] a = rowcolumn();
+        String s;
         int m = Integer.parseInt(a[0]);
         int n = Integer.parseInt(a[1]);
         int[][] mat1 = matrix(m, n);
@@ -29,7 +30,11 @@ public final class Solution {
         if (m == p && n == q) {
             for (int i = 0; i < p; i++) {
                 for (int j = 0; j < q; j++) {
-                    String s = (j != q - 1) ? " " : "";
+                    if (j != q - 1) {
+                        s = " "; 
+                    } else {
+                        s = "";
+                    }
                     System.out.print(mat1[i][j] + mat2[i][j] + s);
                 }
                 System.out.println();
