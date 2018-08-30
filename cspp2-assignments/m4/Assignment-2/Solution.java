@@ -4,7 +4,7 @@ import java.util.Scanner;
  */
 public final class Solution {
     /**
-     * { var_description }
+     * { var_description }.
      */
     private static Scanner sc = new Scanner(System.in);
     /**
@@ -27,9 +27,9 @@ public final class Solution {
         int q = Integer.parseInt(b[1]);
         int[][] mat2 = matrix(p, q);
         if (m == p && n == q) {
-            for (int i = 0; i < p; i++){
-                for (int j = 0; j < q; j++){
-                    String s = (j != q -1) ? " " : "";
+            for (int i = 0; i < p; i++) {
+                for (int j = 0; j < q; j++) {
+                    String s = (j != q - 1) ? " " : "";
                     System.out.print(mat1[i][j] + mat2[i][j] + s);
                 }
                 System.out.println();
@@ -53,7 +53,7 @@ public final class Solution {
      * @param      b     { parameter_description }
      * @return     { description_of_the_return_value }
      */
-    static int[][] matrix(int a, int b) {
+    static int[][] matrix(final int a, final int b) {
         int[][] mat = new int[a][b];
         for (int i = 0; i < a; i++) {
             String str1 = sc.nextLine();
