@@ -6,7 +6,7 @@ public final class Solution {
     /**
      * { var_description }
      */
-    static Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
     /**
      * Constructs the object.
      */
