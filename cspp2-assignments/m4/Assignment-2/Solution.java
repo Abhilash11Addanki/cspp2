@@ -31,7 +31,7 @@ public final class Solution {
             for (int i = 0; i < p; i++) {
                 for (int j = 0; j < q; j++) {
                     if (j != q - 1) {
-                        s = " "; 
+                        s = " ";
                     } else {
                         s = "";
                     }
