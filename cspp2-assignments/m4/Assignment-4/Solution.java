@@ -1,4 +1,7 @@
-
+/**
+ * author : @abhilash
+ * Date 30 Aug 2018
+ */
 import java.util.Scanner;
 /**
  * Class for solution.
