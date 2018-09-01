@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Write a java program to round the
  * elements of a matrix to the nearest 100.
  *
- * @author : 
+ * @author : abhilash.
  */
 final class Solution {
     /**
@@ -22,21 +22,23 @@ final class Solution {
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+    static int[][] roundHundred(final int[][] a, final int rows, 
+        final int columns) {
 
-	// write ypur code here
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < columns; j++) {
-			int temp1 = (a[i][j] / 100) * 100;
-			int temp2 = temp1 + 100;
-			if (a[i][j] - temp1 > temp2 - a[i][j]) {
-				a[i][j] = temp2;
-			} else {
-				a[i][j] = temp1;
-			}
-		}
-	}
-	return a;
+    // write ypur code here
+    final int hundred = 100;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            int temp1 = (a[i][j] / hundred) * hundred;
+            int temp2 = temp1 + hundred;
+            if (a[i][j] - temp1 > temp2 - a[i][j]) {
+                a[i][j] = temp2;
+            } else {
+                a[i][j] = temp1;
+            }
+        }
+    }
+    return a;
     }
     /**
      * Main function.
