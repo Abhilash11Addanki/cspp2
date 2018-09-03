@@ -11,14 +11,13 @@ class InputValidator
 	/**
 	 * int length.
 	 */
-	private int length;
+	private final int length = 6;
 	/**
 	 * Constructs the object.
 	 * @param      d     { parameter_description }
 	 */
 	InputValidator(String d) {
 		data = d;
-		length = 6;
 	}
 	/**
 	 * validateData method.
