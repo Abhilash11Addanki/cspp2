@@ -141,7 +141,7 @@ public class List {
         // Think about what to do to the size variable.
         for (int i = 0; i < arr.length; i++) {
         	if (arr[i] == arr[index]) {
-        		for(int j = i; j < arr.length - 1; j++) {
+        		for(int j = i; j < arr.length; j++) {
         			arr[j] = arr[j + 1];
         		}
         	break;
