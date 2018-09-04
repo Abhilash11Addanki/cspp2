@@ -71,9 +71,9 @@ public class List {
  * @param      index  The index
  * @return     { description_of_the_return_value }
  */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
-        if (index > size){
+        if (index > size) {
             return -1;
         }
         return arr[index];
@@ -97,7 +97,7 @@ public class List {
      */
     public boolean contains(int item) {
         // Replace the code below
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] == item) {
                 return true;
             }
