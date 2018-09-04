@@ -150,8 +150,8 @@ public class List {
         	break;
         }
     }
-        }
     size -= 1;
+    }
 }
 
     /*
