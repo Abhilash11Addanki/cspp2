@@ -16,13 +16,13 @@ public class List {
  * Constructs the object.
  */
     public List() {
-    	final int ten = 10;
+        final int ten = 10;
         arr = new int[ten];
         size = 0;
         for (int i = 0; i < arr.length; i++) {
-        	if (arr[i] != 0) {
-        		size += 1;
-        	}
+            if (arr[i] != 0) {
+                size += 1;
+            }
         }
     }
     /**
@@ -31,8 +31,8 @@ public class List {
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        	arr[size] = item;
-        	size++;
+            arr[size] = item;
+            size++;
     }
     /**
      * size method.
@@ -41,7 +41,7 @@ public class List {
     public int size() {
         // replace the code below to implement the size method
         if (size < 0) {
-        	return 0;
+            return 0;
         }
         return size;
     }
@@ -49,18 +49,18 @@ public class List {
      * remove method.
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index > size) {
-        	System.out.println("Invalid Position Exception");
+            System.out.println("Invalid Position Exception");
         } else {
-        	   for (int i = 0; i < arr.length; i++) {
-        	if (arr[i] == arr[index]) {
-        		for(int j = i; j < arr.length - 1; j++) {
-        			arr[j] = arr[j + 1];
-        		}
-        	break;
+               for(int i = 0; i < arr.length; i++) {
+            if (arr[i] == arr[index]) {
+                for(int j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+            break;
         }
     }
     size -= 1;
@@ -74,7 +74,7 @@ public class List {
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index > size){
-        	return -1;
+            return -1;
         }
         return arr[index];
     }
@@ -86,7 +86,7 @@ public class List {
         // Replace the code below
         int[] newarr = new int[size];
         for (int i = 0; i < size; i++) {
-        	newarr[i] = arr[i];
+            newarr[i] = arr[i];
         }
         return Arrays.toString(newarr).replace(" ", "");
     } 
@@ -98,9 +98,9 @@ public class List {
     public boolean contains(int item) {
         // Replace the code below
         for (int i = 0; i < arr.length; i++){
-        	if (arr[i] == item) {
-        		return true;
-        	}
+            if (arr[i] == item) {
+                return true;
+            }
         }
         return false;
     }
@@ -112,9 +112,9 @@ public class List {
     public int indexOf(int item) {
         // Replace the code below
         for (int i = 0; i < arr.length; i++) {
-        	if (arr[i] == item) {
-        		return i;
-        	}
+            if (arr[i] == item) {
+                return i;
+            }
         }
         return -1;
     }
@@ -122,7 +122,7 @@ public class List {
      * main method.
      * @param      args  The arguments
      */
-	public static void main(final String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
         // code to read the test cases input file
@@ -159,7 +159,7 @@ public class List {
                 case "get":
                 int temp = l.get(Integer.parseInt(tokens[1]));
                 if (temp != -1){
-                	System.out.println(temp);
+                    System.out.println(temp);
                 }
                 break;
                 case "contains":
@@ -167,5 +167,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
