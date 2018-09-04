@@ -1,5 +1,6 @@
 import java.io.BufferedInputStream;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
 /**
  * List class.
  */
@@ -164,6 +165,8 @@ public class List {
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
+                break;
+                default:
                 break;
             }
         }
