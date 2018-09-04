@@ -193,7 +193,7 @@ public class List {
         for (int i = 0; i < size; i++) {
         	newarr[i] = arr[i];
         }
-        return Arrays.toString(newarr);
+        return Arrays.toString(newarr).replace(" ", "");
     } 
     
     /*
