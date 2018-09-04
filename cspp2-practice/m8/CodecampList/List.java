@@ -190,11 +190,8 @@ public class List {
     public String toString() {
         // Replace the code below
         int[] newarr = new int[size];
-        for (int i = 0, j = 0; i < arr.length; i++) {
-        	if (arr[i] != 0) {
-        		newarr[j] = arr[i];
-        		j++;
-        	}
+        for (int i = 0; i < size; i++) {
+        	newarr[i] = arr[i];
         }
         return Arrays.toString(newarr);
     } 
