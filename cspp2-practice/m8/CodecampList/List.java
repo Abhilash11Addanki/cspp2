@@ -5,25 +5,25 @@ import java.util.*;
  */
 public class List {
 /**
- * { var_description }
+ * Integer array.
  */
     private int[] arr;
 /**
- * { var_description }
+ * size of type int.
  */
     private int size;
 /**
  * Constructs the object.
  */
     public List() {
-        arr = new int[10];
+    	final int ten = 10;
+        arr = new int[ten];
         size = 0;
         for (int i = 0; i < arr.length; i++) {
         	if (arr[i] != 0) {
         		size += 1;
         	}
         }
-
     }
     /**
      * add method.
