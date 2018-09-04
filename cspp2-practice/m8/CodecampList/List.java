@@ -89,13 +89,13 @@ public class List {
             newarr[i] = arr[i];
         }
         return Arrays.toString(newarr).replace(" ", "");
-    } 
+    }
     /**
      * contains method.
      * @param      item  The item
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == item) {
@@ -109,7 +109,7 @@ public class List {
      * @param      item  The item
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == item) {
