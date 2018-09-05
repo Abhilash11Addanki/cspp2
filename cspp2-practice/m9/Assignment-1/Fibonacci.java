@@ -2,7 +2,10 @@ import java.util.Scanner;
 /**
  * Class for fibonacci.
  */
-public class Fibonacci {
+public final class Fibonacci {
+    private Fibonacci() {
+
+    }
     /**
      * fib method.
      * @param      n     { parameter_description }
