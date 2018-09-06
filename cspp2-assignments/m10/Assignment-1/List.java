@@ -89,14 +89,14 @@ public class List {
         }
         String str = "[";
         int i = 0;
-        for(i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
         return str;
     }
     /**
-     * { function_description }
+     * { function_description }.
      * @param      item  The item
      * @return     { description_of_the_return_value }
      */
@@ -110,8 +110,9 @@ public class List {
      */
     public int indexOf(final int item) {
         for (int i = 0; i < size; i++) {
-            if (item == list[i])
+            if (item == list[i]) {
                 return i;
+            }
         }
         return -1;
     }
