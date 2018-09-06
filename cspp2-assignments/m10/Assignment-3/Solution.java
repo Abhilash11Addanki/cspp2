@@ -71,7 +71,7 @@ public class Solution {
                             listString.add(tokens[1]);
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         listString.addAll(t1);
                         }
@@ -120,7 +120,7 @@ public class Solution {
                             listInteger.add(Integer.parseInt(tokens[1]));
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Integer[] temp = new Integer[t1.length];
                         for (int i = 0;i < temp.length; i++) {
@@ -171,7 +171,7 @@ public class Solution {
                             listFloat.add(Float.parseFloat(tokens[1]));
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Float temp[] = new Float[t1.length];
                         for (int i = 0; i < t1.length ; i++) {
@@ -222,7 +222,7 @@ public class Solution {
                             listCharacter.add(tokens[1].charAt(0));
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Character[] temp = new Character[t1.length];
                         for (int i = 0; i < t1.length ; i++) {
@@ -273,7 +273,7 @@ public class Solution {
                             listDouble.add(Double.parseDouble(tokens[1]));
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Double[] temp = new Double[t1.length];
                         for (int i = 0; i < t1.length ; i++) {
@@ -324,7 +324,7 @@ public class Solution {
                             listStudent.add(new Student(tokens[1]));
                         break;
                         case "addAll":
-                        if(tokens.length == 2){
+                        if(tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Student[] temp = new Student[t1.length];
                         for (int i = 0; i < t1.length ; i++) {
