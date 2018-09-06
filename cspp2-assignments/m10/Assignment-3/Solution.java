@@ -28,7 +28,7 @@ class Student {
      * @param      other  The other
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (!(other instanceof Student)) {
             return false;
         }
