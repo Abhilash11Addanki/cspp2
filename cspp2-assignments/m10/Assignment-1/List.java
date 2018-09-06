@@ -16,7 +16,7 @@ public class List {
      * Constructs the object.
      */
     public List() {
-    	final int ten = 10;
+        final int ten = 10;
         list = new int[ten];
         size = 0;
     }
@@ -169,7 +169,7 @@ public class List {
      * { function_description }.
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
