@@ -10,7 +10,8 @@ class Student {
     private String name;
     /**
      * Constructs the object.
-     * @param      name  The name
+     *
+     * @param      n     { parameter_description }
      */
     Student(final String n) {
         name = n;
@@ -27,7 +28,7 @@ class Student {
      * @param      other  The other
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(Object other) {
         if (!(other instanceof Student)) {
             return false;
         }
