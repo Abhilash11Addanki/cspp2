@@ -118,8 +118,9 @@ public class List {
         return -1;
     }
     /**
-     * { item_description }.
-     * @param items[] array.
+     * Adds all.
+     *
+     * @param      items  The items
      */
     public void addAll(final int[] items) {
         // write the logic
