@@ -16,7 +16,8 @@ public class List {
      * Constructs the object.
      */
     public List() {
-        list = new int[10];
+    	final int ten = 10;
+        list = new int[ten];
         size = 0;
     }
     /**
@@ -118,9 +119,9 @@ public class List {
     }
     /**
      * { item_description }.
+     * @param items[] array.
      */
-    public void addAll(int items[])
-    {
+    public void addAll(final int[] items) {
         // write the logic
         int newsize = size;
         for (int i = newsize, j = 0; i < newsize + items.length; i++) {
@@ -133,7 +134,7 @@ public class List {
      * @param      index  The index
      * @param      item   The item
      */
-    public void add(final int index,final int item) {
+    public void add(final int index, final int item) {
         // write the logic
         if (index >= 0) {
             int temp = list[index];
@@ -153,8 +154,7 @@ public class List {
      * @param      item  The item
      * @return     { description_of_the_return_value }
      */
-    public int count(final int item)
-    {
+    public int count(final int item) {
          // write the logic
         int count = 0;
         for (int i = 0; i < size; i++) {
