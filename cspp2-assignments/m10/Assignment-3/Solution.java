@@ -47,8 +47,10 @@ class Student {
  * Class for solution.
  */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
-        
     }
     /**
      * { function_description }.
