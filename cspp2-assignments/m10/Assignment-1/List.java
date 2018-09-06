@@ -142,6 +142,8 @@ public class List {
             }
             list[index] = item;
             size++;
+        } else {
+            System.out.println("Negative Index Exception");
         }
     }
     /**
