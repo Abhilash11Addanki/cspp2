@@ -12,15 +12,15 @@ class Student {
      * Constructs the object.
      * @param      name  The name
      */
-    public Student(String name) {
-        this.name = name;
+    Student(final String n) {
+        name = n;
     }
     /**
      * Gets the name.
      * @return     The name.
      */
     public String getName() {
-        return this.name;
+        return name;
     }
     /**
      * { function_description }.
