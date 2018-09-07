@@ -94,6 +94,11 @@ public class List {
         //Inserts the specified element at the end of the list.
         arr[size++] = item;
     }
+    public int[] resize() {
+        int n = 2 * size;
+        int[] newarr = java.util.Arrays.copyOf(arr, n);
+        return newarr;
+    }
 
     /*
      * The size method returns the value of the size. The purpose of the method
@@ -218,6 +223,9 @@ public class List {
      public void removeAll(int[] newArray)
      {
         // write the logic
+        if (size == newArray.length) {
+        	newArray = resize();
+        }
         for (int i = size, j = 0; i < size + newArray.length; i++) {
         	remove(newArray[j]);
         	j++;
