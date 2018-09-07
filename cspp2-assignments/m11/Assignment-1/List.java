@@ -100,7 +100,7 @@ public class List {
             newarr[i] = arr[i];
         }
         return Arrays.toString(newarr).replace(" ", "");
-    } 
+    }
     /**
      * contains method.
      *
@@ -110,7 +110,7 @@ public class List {
      */
     public boolean contains(final int item) {
         // Replace the code below
-        for (int i = 0 ; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (arr[i] == item) {
                 return true;
             }
@@ -126,7 +126,7 @@ public class List {
      */
     public int indexOf(final int item) {
         // Replace the code below
-        for (int i = 0 ; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (item == arr[i]) {
                 return i;
             }
@@ -138,14 +138,15 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         // write the logic
+        int[] resArray = Arrays.copyOf(newArray, newArray.length);
         if (size == newArray.length) {
-            newArray = resize();
+            resArray = resize();
         }
         int newsize = size;
-        for (int i = newsize, j = 0; i < newsize + newArray.length; i++) {
-            add(newArray[j]);
+        for (int i = newsize, j = 0; i < newsize + resArray.length; i++) {
+            add(resArray[j]);
             j++;
         }
     }
@@ -154,7 +155,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-     public void removeAll(int[] newArray) {
+     public void removeAll(final int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < size; j++) {
