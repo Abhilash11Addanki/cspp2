@@ -261,7 +261,7 @@ public class List {
     			}
     		}
     	}
-    	if (count != size) {
+    	if (count != list.size) {
     		return false;
     	}
     return true;
