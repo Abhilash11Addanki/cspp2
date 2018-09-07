@@ -195,15 +195,9 @@ public class List {
     		return false;
     	}
     	for (int i = 0; i < size; i++) {
-    		int count = 0;
-    		for (int j = 0; j < list.size; j++) {
-    			if(list.arr[j] == arr[i]) {
-    				count++;
-    			}
+    		if (arr[i] != list.arr[i]) {
+    			return false;
     		}
-    		if (count == 0) {
-    		return false;
-    	}
     	}
     return true;
     }
