@@ -33,10 +33,10 @@ public class List {
      * add method.
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size == arr.length) {
-        	arr = resize();
+            arr = resize();
         }
         arr[size++] = item;
     }
@@ -61,7 +61,7 @@ public class List {
      * remove method.
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= 0 && index < size) {
@@ -80,10 +80,10 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= size) {
-        	return -1;
+            return -1;
         }
         return arr[index];
     }
@@ -108,12 +108,12 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0 ; i < size; i++) {
-        	if (arr[i] == item) {
-        		return true;
-        	}
+            if (arr[i] == item) {
+                return true;
+            }
         }
         return false;
     }
@@ -124,12 +124,12 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0 ; i < size; i++) {
-        	if (item == arr[i]) {
-        		return i;
-        	}
+            if (item == arr[i]) {
+                return i;
+            }
         }
         return -1;
     }
@@ -141,12 +141,12 @@ public class List {
     public void addAll(int[] newArray) {
         // write the logic
         if (size == newArray.length) {
-        	newArray = resize();
+            newArray = resize();
         }
         int newsize = size;
         for (int i = newsize, j = 0; i < newsize + newArray.length; i++) {
-        	add(newArray[j]);
-        	j++;
+            add(newArray[j]);
+            j++;
         }
     }
     /**
@@ -157,12 +157,12 @@ public class List {
      public void removeAll(int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-        	for (int j = 0; j < size; j++) {
-        		if (arr[j] == newArray[i]) {
-        			remove(j);
-        			j--;
-        		}
-        	}
+            for (int j = 0; j < size; j++) {
+                if (arr[j] == newArray[i]) {
+                    remove(j);
+                    j--;
+                }
+            }
         }
     }
     /**
@@ -173,40 +173,40 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
     // write the logic for subList
-    	List l = new List();
-    	if ((start <= 0 || end <= 0) || (start > end) || size == 0) {
-    		System.out.println("Index Out of Bounds Exception");
-    		return null;
-    	} else {
-    		for (int i = start; i < end ; i++) {
-    			l.add(arr[i]);
-    		}
-    	}
+        List l = new List();
+        if ((start <= 0 || end <= 0) || (start > end) || size == 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        } else {
+            for (int i = start; i < end ; i++) {
+                l.add(arr[i]);
+            }
+        }
     return l;
     }
-    /*
-    Returns a boolean indicating whether the parameter i.e a List object is
-    exactly matching with the given list or not.
-    */
-    public boolean equals(List list) 
-    {
-    	if (size != list.size) {
-    		return false;
-    	}
-    	for (int i = 0; i < size; i++) {
-    		if (arr[i] != list.arr[i]) {
-    			return false;
-    		}
-    	}
+    /**
+     * equals method.
+     *
+     * @param      list  The list
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean equals(List list) {
+        if (size != list.size) {
+            return false;
+        }
+        for (int i = 0; i < size; i++) {
+            if (arr[i] != list.arr[i]) {
+                return false;
+            }
+        }
     return true;
     }
-    /*
-    * Removes all the elements from list
-    * Think about this case and make the method
-    * the simpler.
-    */
+    /**
+     * clear method.
+     */
     public void clear()
     {
     // write the logic for clear.
@@ -215,7 +215,7 @@ public class List {
     size = 0;
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
