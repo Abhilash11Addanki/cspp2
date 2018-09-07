@@ -12,7 +12,7 @@ class Student {
      * Constructs the object.
      * @param      n     { parameter_description }
      */
-    public Student(String n) {
+    Student(final String n) {
         name = n;
     }
     /**
@@ -27,7 +27,7 @@ class Student {
      * @param      other  The other
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(Object other) {
+    public boolean equals(final Object other) {
         if (!(other instanceof Student)) {
             return false;
         }
@@ -45,7 +45,10 @@ class Student {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
+    private Solution() {
+
+    }
     /**
      * { function_description }.
      * @param      stdin  The stdin
