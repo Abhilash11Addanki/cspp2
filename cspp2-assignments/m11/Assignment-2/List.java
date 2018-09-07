@@ -214,7 +214,7 @@ public class List<E> {
         }
         for (int i = 0; i < size; i++) {
             if (list[i].equals(listdata.list[i])) {
-                return false;
+                return true;
             }
         }
     return false;
