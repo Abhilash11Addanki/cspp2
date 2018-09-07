@@ -46,6 +46,9 @@ class Student {
  * Class for solution.
  */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
 
     }
@@ -53,7 +56,7 @@ public final class Solution {
      * { function_description }.
      * @param      stdin  The stdin
      */
-    public static void executeListInteger(Scanner stdin) {
+    public static void executeListInteger(final Scanner stdin) {
         List<Integer> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -110,8 +113,9 @@ public final class Solution {
                 if (tokens.length == 2) {
                     String[] t2 = tokens[1].split(",");
                     Integer[] a = new Integer[t2.length];
-                    for (int i = 0; i < t2.length; i++)
+                    for (int i = 0; i < t2.length; i++) {
                         a[i] = Integer.parseInt(t2[i]);
+                    }
                     l.removeAll(a);
                 }
                 break;
