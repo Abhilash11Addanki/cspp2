@@ -92,6 +92,9 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
+        if (size == arr.length) {
+        	arr = resize();
+        }
         arr[size++] = item;
     }
     public int[] resize() {
@@ -210,6 +213,9 @@ public class List {
     public void addAll(int[] newArray)
     {
         // write the logic
+        if (size == newArray.length) {
+        	newArray = resize();
+        }
         int newsize = size;
         for (int i = newsize, j = 0; i < newsize + newArray.length; i++) {
         	add(newArray[j]);
