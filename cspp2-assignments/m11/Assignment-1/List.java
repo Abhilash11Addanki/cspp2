@@ -255,19 +255,19 @@ public class List {
     */
     public boolean equals(List list) 
     {
-    	int count = 0;
     	if (size != list.size) {
     		return false;
     	}
     	for (int i = 0; i < size; i++) {
+    		int count = 0;
     		for (int j = 0; j < list.size; j++) {
     			if(list.arr[j] == arr[i]) {
     				count++;
     			}
     		}
-    	}
-    	if (count != list.size) {
+    		if (count != list.size) {
     		return false;
+    	}
     	}
     return true;
     }
