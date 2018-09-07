@@ -181,7 +181,7 @@ public class List {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
-            for (int i = start; i < end ; i++) {
+            for (int i = start; i < end; i++) {
                 l.add(arr[i]);
             }
         }
@@ -194,7 +194,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(List list) {
+    public boolean equals(final List list) {
         if (size != list.size) {
             return false;
         }
@@ -208,14 +208,17 @@ public class List {
     /**
      * clear method.
      */
-    public void clear()
-    {
+    public void clear() {
     // write the logic for clear.
     final int defaultsize = 10;
     arr = new int[defaultsize];
     size = 0;
     }
-
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
