@@ -160,7 +160,7 @@ public class List {
         for (int i = 0; i < removearr.length; i++) {
         	for (int j = 0; j < newArray.length; j++) {
         		if (removearr[i] == newArray[j]) {
-        			remove(i);
+        			remove(j);
         		}
         	}
         }
