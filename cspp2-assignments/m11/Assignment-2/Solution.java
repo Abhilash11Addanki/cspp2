@@ -36,6 +36,15 @@ class Student {
         return this.getName().equals(that.getName());
     }
     /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    @Override
+    public int hashCode() {
+        return this.hashCode();
+    }
+    /**
      * Returns a string representation of the object.
      * @return     String representation of the object.
      */
