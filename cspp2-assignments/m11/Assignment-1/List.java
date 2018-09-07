@@ -231,7 +231,7 @@ public class List {
         for (int j:newArray) {
         	for (int i = 0; i < size; i++) {
         		if (arr[i] == j) {
-        			remove(j);
+        			remove(i);
         		}
         	}
         }
