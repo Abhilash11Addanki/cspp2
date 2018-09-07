@@ -221,10 +221,10 @@ public class List {
      array.    
     */
      public void removeAll(int[] newArray)
-     {
+    {
         // write the logic
         for (int i = size, j = 0; i < size + newArray.length; i++) {
-        	remove(newArray[j]);
+        	remove(j);
         	j++;
         }
     }
