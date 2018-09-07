@@ -265,7 +265,7 @@ public class List {
     				count++;
     			}
     		}
-    		if (count != list.size) {
+    		if (count == 0) {
     		return false;
     	}
     	}
