@@ -213,7 +213,7 @@ public class List<E> {
             return false;
         }
         for (int i = 0; i < size; i++) {
-            if (list[i] != listdata.list[i]) {
+            if (! list[i].equals(listdata.list[i])) {
                 return false;
             }
         }
