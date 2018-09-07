@@ -232,9 +232,8 @@ public class List {
         if (size == newArray.length) {
         	newArray = resize();
         }
-        for (int i = size, j = 0; i < size + newArray.length; i++) {
-        	remove(j);
-        	j++;
+        for (int i = size; i < size + newArray.length; i++) {
+        	remove(i);
         }
     }
     /*
