@@ -156,10 +156,9 @@ public class List {
      */
      public void removeAll(int[] newArray) {
         // write the logic
-        int[] removearr = Arrays.copyOf(arr, arr.length);
         for (int i = 0; i < newArray.length; i++) {
         	for (int j = 0; j < size; j++) {
-        		if (removearr[j] == newArray[i]) {
+        		if (arr[j] == newArray[i]) {
         			remove(j);
         			j--;
         		}
