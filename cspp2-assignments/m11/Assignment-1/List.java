@@ -205,7 +205,8 @@ public class List {
     public void addAll(int[] newArray)
     {
         // write the logic
-        for (int i = size, j = 0; i < size + newArray.length; i++) {
+        int newsize = size;
+        for (int i = newsize, j = 0; i < newsize + newArray.length; i++) {
         	add(newArray[j]);
         	j++;
         }
