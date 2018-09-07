@@ -92,7 +92,15 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
+        if (size == arr.length) {
+        	arr = resize();
+        }
         arr[size++] = item;
+    }
+    public int[] resize() {
+        int n = 2 * size;
+        int[] newarr = java.util.Arrays.copyOf(arr, n);
+        return newarr;
     }
     /*
      * The size method returns the value of the size. The purpose of the method
@@ -204,6 +212,9 @@ public class List {
     public void addAll(int[] newArray)
     {
         // write the logic
+        if (size == newArray.length) {
+        	newArray = resize();
+        }
         int newsize = size;
         for (int i = newsize, j = 0; i < newsize + newArray.length; i++) {
         	add(newArray[j]);
