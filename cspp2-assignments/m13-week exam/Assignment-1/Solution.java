@@ -144,10 +144,9 @@ class Set {
         if (size == 0 || set.size == 0) {
             return null;
         }
-        int k = 0;
+        int i = 0, k = 0;
         int rows = size * set.size;
         int[][] resArray = new int[rows][2];
-        for (int i = 0; i < size; i++) {
             for (int j = 0; j < rows; j++) {
                 resArray[j][0] = arr[i];
                 resArray[j][1] = set.arr[k++];
@@ -156,7 +155,6 @@ class Set {
                     i++;
                 }
             }
-        }
         return resArray;
     }
 }
