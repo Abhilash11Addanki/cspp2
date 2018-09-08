@@ -38,11 +38,16 @@ class Set {
 		return false;
 	}
 	public String toString() {
-		int[] newarr = new int[size];
-		for (int i = 0; i < size; i++) {
-			newarr[i] = arr[i];
-		}
-		return Arrays.toString(newarr).replace(" ", "");
+		if (size == 0) {
+            return null;
+        }
+        String str = "{";
+        int i = 0;
+        for (i = 0; i < size - 1; i++) {
+            str = str + arr[i] + ",";
+        }
+        str = str + arr[i] + "}";
+        return str;
 	}
 	public void add(final int item) {
 		if (size == arr.length) {
