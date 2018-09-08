@@ -70,23 +70,14 @@ class Set {
 			j++;
 		}
 	}
-	public int[] intersection(final Set set) {
-		int[] newarr = new int[size];
-		int i = 0, j = 0;
-		int m = size, n = size;;
-		while (i < m && j < n) {
-			if (arr[i] < set.arr[j]) {
-				i++;
-			} else if (set.arr[j] < arr[i]) {
-				j++;
-			} else {
-				for (i = 0; i < newarr.length; i++) {
-					newarr[i] = set.arr[j++];
-					i++;
-				}
+	public Set intersection(final Set set) {
+		Set resArray = new Set();
+		for (int i = 0; i < size; i++) {
+			if (set.contains(arr[i])) {
+				resArray.add(arr[i]);
 			}
 		}
-		return newarr;
+		return resArray;
 	}
 	public int[] retainAll(final int[] newArray) {
 		int[] resArray = new int[newArray.length];
