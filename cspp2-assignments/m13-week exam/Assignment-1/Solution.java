@@ -91,7 +91,7 @@ class Set {
 		return resArray;
 	}
 	public int[][] cartesianProduct(final Set set) {
-		if (this.arr.length == 0 || set.arr.length == 0) {
+		if (arr.length == 0 || (set.arr).length == 0) {
 			return null;
 		}
 		int rows = this.size()*set.size();
