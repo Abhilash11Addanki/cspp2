@@ -18,7 +18,7 @@ class Set {
     /**
      * Constructs the object.
      */
-    public Set() {
+    Set() {
         final int ten = 10;
         arr = new int[ten];
         size = 0;
@@ -27,7 +27,7 @@ class Set {
      * Constructs the object.
      * @param      n     { parameter_description }
      */
-    public Set(final int n) {
+    Set(final int n) {
         size = 0;
         arr = new int[n];
     }
@@ -84,7 +84,7 @@ class Set {
         if (size == arr.length) {
             arr = resize();
         }
-        if (contains(item) == false) {
+        if (!contains(item)) {
             arr[size++] = item;
         }
     }
@@ -99,7 +99,7 @@ class Set {
         }
         int newsize = size;
         for (int i = newsize, j = 0; i < newsize + resArray.length; i++) {
-            if (contains(resArray[j]) == false) {
+            if (!contains(resArray[j])) {
                 add(resArray[j]);
             }
             j++;
