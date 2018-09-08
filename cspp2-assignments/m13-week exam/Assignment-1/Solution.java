@@ -81,10 +81,10 @@ class Set {
 	}
 	public Set retainAll(final int[] newArray) {
 		Set resArray = new Set();
-		for (int i = 0; i < newArray.length; i++) {
-			for (int j = 0; j < size; j++) {
-				if (arr[j] == newArray[i]) {
-					resArray.add(arr[j]);
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < newArray.length; j++) {
+				if (arr[i] == newArray[j]) {
+					resArray.add(arr[i]);
 				}
 			}
 		}
