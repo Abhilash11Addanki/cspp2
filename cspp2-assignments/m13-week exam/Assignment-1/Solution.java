@@ -44,7 +44,7 @@ class Set {
         String str = "{";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
-            str = str + arr[i] + ",";
+            str = str + arr[i] + ", ";
         }
         str = str + arr[i] + "}";
         return str;
