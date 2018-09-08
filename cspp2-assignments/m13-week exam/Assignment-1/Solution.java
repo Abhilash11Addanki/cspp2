@@ -79,12 +79,12 @@ class Set {
 		}
 		return resArray;
 	}
-	public int[] retainAll(final int[] newArray) {
-		int[] resArray = new int[newArray.length];
+	public Set retainAll(final int[] newArray) {
+		Set resArray = new Set();
 		for (int i = 0; i < newArray.length; i++) {
 			for (int j = 0; j < size; j++) {
 				if (arr[j] == newArray[i]) {
-					resArray[i] = arr[j];
+					resArray.add(arr[j]);
 				}
 			}
 		}
