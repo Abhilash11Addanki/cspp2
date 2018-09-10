@@ -9,7 +9,7 @@ class SortedSet extends Set {
      * sort method.
      * @param      array  The array
      */
-    public void sort(int[] array) {
+    public void sort(final int[] array) {
         int temp;
         for (int i = 0; i < size; i++) {
             for (int j = i + 1; j < size; j++) {
@@ -25,7 +25,7 @@ class SortedSet extends Set {
      * add method.
      * @param      item  The item
      */
-    public void add (final int item) {
+    public void add(final int item) {
         if (!contains(item)) {
             arr[size++] = item;
         }
@@ -190,7 +190,8 @@ public final class Solution {
                 int[] object = s.subSet(Integer.parseInt(arrstring3[0]),
                                         Integer.parseInt(arrstring3[1]));
                 if (object != null) {
-                    System.out.println(Arrays.toString(object).replace("[", "{").replace("]", "}"));
+                    System.out.println(Arrays.toString(object).replace("[",
+                        "{").replace("]", "}"));
                 }
                 break;
             case "headSet":
@@ -199,7 +200,8 @@ public final class Solution {
                 }
                 int[] obj = s.headSet(Integer.parseInt(tokens[1]));
                 if (obj != null) {
-                    System.out.println(Arrays.toString(obj).replace("[", "{").replace("]", "}"));
+                    System.out.println(Arrays.toString(obj).replace("[",
+                        "{").replace("]", "}"));
                 }
                 break;
             case "last":
