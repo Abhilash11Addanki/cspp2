@@ -10,13 +10,16 @@ class SortedSet extends Set {
      * @param      array  The array
      */
     public void sort(final int[] array) {
-        int temp, i = 0;
-        for (int j = i + 1; j < size; j++, i++) {
-            if (array[i] > array[j]) {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+        int temp;
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (array[i] > array[j]) {
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
             }
+            break;
         }
     }
     /**
