@@ -28,7 +28,7 @@ class SortedSet extends Set {
         int[] result = new int[size];
         int tmp = 0;
         for (int i = fromElement, j = 0; i < toElement; i++, j++) {
-            result[j] = arr[i];
+            result[j] = i;
             tmp++;
         }
         return Arrays.copyOf(result, tmp);
