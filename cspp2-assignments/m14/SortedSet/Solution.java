@@ -2,38 +2,56 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 class SortedSet extends Set {
+    public void sort(int[] array) {
+        int temp;
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (array[i] > array[j]) {
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+            }
+        }
+    }
+    public void add (final int item) {
+        if (!contains(item)) {
+            arr[size++] = item;
+        }
+        sort(arr);
+    }
     public int[] subSet(final int fromElement, final int toElement) {
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        int[] tmp = Arrays.copyOf(arr, size);
-        Arrays.sort(tmp);
         int[] result = new int[toElement - fromElement];
         for (int i = fromElement, j = 0; i < toElement; i++, j++) {
-            result[j] = tmp[i];
+            result[j] = arr[i];
         }
         return result;
     }
     public int[] headSet(final int toElement) {
-        int[] tmp = Arrays.copyOf(arr, size);
-        Arrays.sort(tmp);
-        System.out.println(Arrays.toString(tmp));
-        int[] result = new int[tmp.length];
-        for (int i = 0; i < tmp.length; i++) {
-            if (tmp[i] < toElement) {
-                result[i] = tmp[i];
+        int[] result = new int[size];
+        int tmp = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] < toElement) {
+                result[i] = arr[i];
+                tmp++;
             }
         }
-        return result;
+        return Arrays.copyOf(result, tmp);
     }
     public int last() {
-        int[] tmp = Arrays.copyOf(arr, size);
-        Arrays.sort(tmp);
         if (size == 0) {
             return 0;
         }
-        return tmp[tmp.length - 1];
+        return arr[size - 1];
+    }
+    public void addAll(int[] ele) {
+        for (int i : ele) {
+            this.add(i);
+        }
     }
 }
 public final class Solution {
@@ -151,6 +169,14 @@ public final class Solution {
                     System.out.println("Set Empty Exception");
                 } else {
                     System.out.println(temp);
+                }
+                break;
+            case "addAll":
+                int[] intArr = intArray(tokens[1]);
+                if (intArr.length == 1) {
+                    s.add(intArr[0]);
+                } else {
+                    s.add(intArr);
                 }
                 break;
             default:
