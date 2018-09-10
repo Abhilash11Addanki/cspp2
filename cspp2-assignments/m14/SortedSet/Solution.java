@@ -26,12 +26,21 @@ class SortedSet extends Set {
             return null;
         }
         int[] result = new int[size];
-        int tmp = 0;
-        for (int i = fromElement, j = 0; i < toElement; i++, j++) {
-            result[j] = i;
-            tmp++;
+        int cnt = 0, k = 0;
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == fromElement) {
+                for (int j = i; j < size; j++) {
+                    if (arr[j] == toElement) {
+                        break;
+                    } else {
+                        result[k] = arr[j];
+                        k++;
+                        cnt++;
+                    }
+                }
+            }
         }
-        return Arrays.copyOf(result, tmp);
+        return Arrays.copyOf(result, cnt);
     }
     public int[] headSet(final int toElement) {
         int[] result = new int[size];
