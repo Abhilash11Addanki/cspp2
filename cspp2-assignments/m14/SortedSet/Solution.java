@@ -1,7 +1,14 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+/**
+ * Class for sorted set.
+ */
 class SortedSet extends Set {
+    /**
+     * sort method.
+     * @param      array  The array
+     */
     public void sort(int[] array) {
         int temp;
         for (int i = 0; i < size; i++) {
@@ -14,12 +21,22 @@ class SortedSet extends Set {
             }
         }
     }
+    /**
+     * add method.
+     * @param      item  The item
+     */
     public void add (final int item) {
         if (!contains(item)) {
             arr[size++] = item;
         }
         sort(arr);
     }
+    /**
+     * subSet method.
+     * @param      fromElement  The from element
+     * @param      toElement    To element
+     * @return     { description_of_the_return_value }
+     */
     public int[] subSet(final int fromElement, final int toElement) {
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
@@ -39,6 +56,11 @@ class SortedSet extends Set {
         }
         return Arrays.copyOf(result, k);
     }
+    /**
+     * headSet method.
+     * @param      toElement  To element
+     * @return     { description_of_the_return_value }
+     */
     public int[] headSet(final int toElement) {
         int[] result = new int[size];
         int tmp = 0;
@@ -50,6 +72,10 @@ class SortedSet extends Set {
         }
         return Arrays.copyOf(result, tmp);
     }
+    /**
+     * last method.
+     * @return     { description_of_the_return_value }
+     */
     public int last() {
         if (size == 0) {
             System.out.println("Set Empty Exception");
@@ -57,12 +83,19 @@ class SortedSet extends Set {
         }
         return arr[size - 1];
     }
-    public void addAll(int[] ele) {
+    /**
+     * Adds all.
+     * @param      ele   The ele
+     */
+    public void addAll(final int[] ele) {
         for (int i : ele) {
             this.add(i);
         }
     }
 }
+/**
+ * Solution class.
+ */
 public final class Solution {
     /**
      * Constructs the object.
