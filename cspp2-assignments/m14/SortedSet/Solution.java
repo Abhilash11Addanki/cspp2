@@ -26,17 +26,14 @@ class SortedSet extends Set {
             return null;
         }
         int[] result = new int[size];
-        int cnt = 0, k = 0;
-        for (int i = 0; i < size; i++) {
-            if (arr[i] == fromElement) {
-                for (int j = i; j < size; j++) {
-                    if (arr[j] == toElement) {
-                        break;
-                    } else {
-                        result[k] = arr[j];
-                        k++;
-                        cnt++;
-                    }
+        int cnt = 0, k = 0, i = 0;
+        if (arr[i] >= fromElement) {
+            for (int j = i; j < size; j++) {
+                if (arr[j] < toElement) {
+                    result[k] = arr[i];
+                    k++;
+                    i++;
+                    cnt++;
                 }
             }
         }
