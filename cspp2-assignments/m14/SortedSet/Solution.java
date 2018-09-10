@@ -28,9 +28,9 @@ class SortedSet extends Set {
         int[] result = new int[size];
         int cnt = 0, k = 0;
         for (int i = 0; i < size; i++) {
-            if (arr[i] == fromElement) {
+            if (arr[i] > fromElement) {
                 for (int j = i; j < size; j++) {
-                    if (arr[j] == toElement) {
+                    if (arr[j] > toElement) {
                         break;
                     } else {
                         result[k] = arr[j];
