@@ -25,11 +25,13 @@ class SortedSet extends Set {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        int[] result = new int[toElement - fromElement];
+        int[] result = new int[size];
+        int tmp = 0;
         for (int i = fromElement, j = 0; i < toElement; i++, j++) {
             result[j] = arr[i];
+            tmp++;
         }
-        return result;
+        return Arrays.copyOf(result, tmp);
     }
     public int[] headSet(final int toElement) {
         int[] result = new int[size];
