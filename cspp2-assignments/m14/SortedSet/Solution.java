@@ -11,7 +11,7 @@ class SortedSet extends Set {
      */
     public void sort(final int[] array) {
         int temp;
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size; i++) {
             if (array[i] > array[i + 1]) {
                 temp = array[i + 1];
                 array[i] = array[i + 1];
