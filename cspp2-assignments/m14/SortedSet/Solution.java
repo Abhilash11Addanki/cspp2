@@ -18,8 +18,8 @@ class SortedSet extends Set {
                     array[i] = array[j];
                     array[j] = temp;
                 }
-            }
             break;
+            }
         }
     }
     /**
