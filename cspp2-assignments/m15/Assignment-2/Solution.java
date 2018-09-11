@@ -202,7 +202,7 @@ public final class Solution {
 						                   "{").replace("]", "}"));
 					}
 				} catch (Exception e) {
-					System.out.println(e.toString());
+					System.out.println(e.getMessage());
 				}
 				break;
 			case "headSet":
@@ -216,7 +216,7 @@ public final class Solution {
 						                   "{").replace("]", "}"));
 					}
 				} catch (Exception e) {
-					System.out.println(e.toString());
+					System.out.println(e.getMessage());
 				}
 				break;
 			case "last":
@@ -227,7 +227,7 @@ public final class Solution {
 					int temp = s.last();
 					System.out.println(temp);
 				} catch (Exception e) {
-					System.out.println(e.toString());
+					System.out.println(e.getMessage());
 				}
 				break;
 			case "addAll":
