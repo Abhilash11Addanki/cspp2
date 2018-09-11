@@ -202,7 +202,7 @@ public final class Solution {
 						                   "{").replace("]", "}"));
 					}
 				} catch (Exception e) {
-					System.out.println("Invalid Arguments to Subset Exception");
+					System.out.println(e.toString());
 				}
 				break;
 			case "headSet":
@@ -216,7 +216,7 @@ public final class Solution {
 						                   "{").replace("]", "}"));
 					}
 				} catch (Exception e) {
-					System.out.println("Set Empty Exception");
+					System.out.println(e.toString());
 				}
 				break;
 			case "last":
@@ -227,7 +227,7 @@ public final class Solution {
 					int temp = s.last();
 					System.out.println(temp);
 				} catch (Exception e) {
-					System.out.println("Set Empty Exception");
+					System.out.println(e.toString());
 				}
 				break;
 			case "addAll":
