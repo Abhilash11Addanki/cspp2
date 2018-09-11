@@ -209,8 +209,8 @@ public class List {
         // write the logic for subList
         List l = new List();
         if ((start <= 0 || end <= 0) || (start > end) || size == 0) {
-            throw new IndexOutOfBoundsException
-            ("Index Out of Bounds Exception");
+            throw new IndexOutOfBoundsException(
+                "Index Out of Bounds Exception");
         } else {
             for (int i = start; i < end; i++) {
                 l.add(arr[i]);
