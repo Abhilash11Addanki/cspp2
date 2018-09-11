@@ -242,6 +242,13 @@ public class List {
         arr = new int[defaultsize];
         size = 0;
     }
+    /**
+     * count method.
+     *
+     * @param      ele   The ele
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int count(int ele) {
         int cnt = 0;
         for (int i = 0; i < size; i++) {
