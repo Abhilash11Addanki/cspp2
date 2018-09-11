@@ -182,7 +182,8 @@ public class List {
      *
      * @throws     InvalidPositionException  { exception_description }
      */
-    public void removeAll(final int[] newArray) throws InvalidPositionException {
+    public void removeAll(final int[] newArray)
+    throws InvalidPositionException {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < size; j++) {
@@ -203,7 +204,8 @@ public class List {
      *
      * @throws     IndexOutOfBoundsException  { exception_description }
      */
-    public List subList(final int start, final int end) throws IndexOutOfBoundsException {
+    public List subList(final int start, final int end)
+    throws IndexOutOfBoundsException {
         // write the logic for subList
         List l = new List();
         if ((start <= 0 || end <= 0) || (start > end) || size == 0) {
@@ -249,7 +251,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int ele) {
+    public int count(final int ele) {
         int cnt = 0;
         for (int i = 0; i < size; i++) {
             if (arr[i] == ele) {
