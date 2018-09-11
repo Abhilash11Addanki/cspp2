@@ -82,7 +82,7 @@ public class List {
         return size;
     }
     /**
-     * { function_description }
+     * remove method.
      *
      * @param      index                     The index
      *
@@ -194,7 +194,7 @@ public class List {
         }
     }
     /**
-     * { function_description }
+     * subList method.
      *
      * @param      start                      The start
      * @param      end                        The end
