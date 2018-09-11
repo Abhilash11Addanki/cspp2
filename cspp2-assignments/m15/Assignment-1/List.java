@@ -221,6 +221,15 @@ public class List {
 		arr = new int[defaultsize];
 		size = 0;
 	}
+	public int count(int ele) {
+		int cnt = 0;
+		for (int i = 0; i < size; i++) {
+			if (arr[i] == ele) {
+				cnt++;
+			}
+		}
+		return cnt;
+	}
 	/**
 	 * { function_description }.
 	 *
@@ -333,6 +342,9 @@ public class List {
 			case "clear":
 				l.clear();
 				break;
+			case "count":
+				int res = l.count(Integer.parseInt(tokens[1]));
+				System.out.println(res);
 			default:
 				break;
 			}
