@@ -114,11 +114,11 @@ class BookYourShow {
     /**
      * showList.
      */
-    ArrayList<Show> showList = new ArrayList<Show>();
+    private ArrayList<Show> showList = new ArrayList<Show>();
     /**
      * bookList.
      */
-    ArrayList<String> bookList = new ArrayList<String>();
+    private ArrayList<String> bookList = new ArrayList<String>();
     /**
      * Adds a show.
      * @param      show  The show
