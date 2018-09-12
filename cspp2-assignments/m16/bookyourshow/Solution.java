@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
 class Show {
 	String movie_name;
 	String datetime;
@@ -8,7 +10,23 @@ class Show {
 		datetime = date;
 		seats = seat;
 	}
+	String getMovie() {
+		return movie_name;
+	}
+	String getTime() {
+		return datetime;
+	}
+	String[] getSeats() {
+		return seats;
+	}
+	void setSeatNA(int index) {
+		seats[index] = "N/A";
+	}
+	public String toString() {
+		return movie_name + "," + datetime;
+	}
 }
+
 class Patron {
 	String Patron_name;
 	String Patron_number;
@@ -16,35 +34,60 @@ class Patron {
 		Patron_name = name;
 		Patron_number = number;
 	}
+	String getPatronName() {
+		return Patron_name;
+	}
+	String getPatronNumber() {
+		return Patron_number;
+	}
+	public String toString() {
+		return Patron_name + "," + Patron_number;
+	}
 }
 class BookYourShow {
-	private String movie;
-	private String timedate;
-	private String[] seat_num;
-	private String patron_name;
-	private String patron_num;
-	void addAShow(String name, String date, String[] seat) {
-		movie = name;
-		timedate = date;
-		seat_num = seat;
+	ArrayList<Show> showList = new ArrayList<Show>();
+	ArrayList<String> bookList = new ArrayList<String>();
+	void addAShow(Show show) {
+		showList.add(show);
 	}
 	void bookAShow(String name, String date, Patron p, String[] seat) {
-		movie = name;
-		timedate = date;
-		seat_num = seat;
-		patron_name = p.Patron_name;
-		patron_num = p.Patron_number;
+		Show show = getAShow(name, date);
+		if (show == null) {
+			System.out.println("No show");
+			return;
+		}
+		boolean flag = false;
+		String[] sseats = show.getSeats();
+		for (String seat_num : seat)
+			for (int i = 0; i < sseats.length; i++)
+				if (seat_num.equals(sseats[i])) {
+					show.setSeatNA(i);
+					flag = true;
+				}
+
+
+		if (flag) {
+			bookList.add(p.getPatronNumber() + " " + name + " " + date);
+		}
 	}
-	String getAShow(String name, String date) {
-		if (movie == name && date == timedate) {
-			return name + "," + date;
+	Show getAShow(String name, String date) {
+		for (Show show : showList) {
+			if (show.getMovie().equals(name) && show.getTime().equals(date)) {
+				return show;
+			}
 		}
 		return null;
 	}
 	void printTicket(String name, String date, String num) {
-		if (movie == name && date == timedate && num == patron_num) {
-			System.out.println(name + "," + date + "," + num);
-		}
+		String s = num + " " + name + " " + date;
+		if (bookList.contains(s))
+			System.out.println(s);
+		else
+			System.out.println("Invalid");
+	}
+	void showAll() {
+		for (Show show : showList)
+			System.out.println(show.toString() + "," + Arrays.toString(show.getSeats()).replace(" ", ""));
 	}
 }
 /**
@@ -77,7 +120,7 @@ public final class Solution {
 				for (int j = 0; j < seats.length; j++) {
 					seats[j] = tokens[k++];
 				}
-				bys.addAShow(check[1], tokens[1], seats);
+				bys.addAShow(new Show(check[1], tokens[1], seats));
 				break;
 
 			case "book":
@@ -91,7 +134,7 @@ public final class Solution {
 				break;
 
 			case "get":
-				String show = bys.getAShow(check[1], tokens[1]);
+				Show show = bys.getAShow(check[1], tokens[1]);
 				if (show != null) {
 					System.out.println(show);
 				} else {
@@ -101,6 +144,9 @@ public final class Solution {
 
 			case "print":
 				bys.printTicket(check[1], tokens[1], tokens[2]);
+				break;
+			case "showAll":
+				bys.showAll();
 				break;
 
 			default:
