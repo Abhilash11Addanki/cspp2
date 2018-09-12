@@ -19,7 +19,7 @@ class Show {
 	String[] getSeats() {
 		return seats;
 	}
-	void setSeatNA(int index) {
+	void setSeat(int index) {
 		seats[index] = "N/A";
 	}
 	public String toString() {
@@ -57,14 +57,13 @@ class BookYourShow {
 			return;
 		}
 		boolean flag = false;
-		String[] sseats = show.getSeats();
+		String[] seats = show.getSeats();
 		for (int i = 0; i < seat.length; i++)
-			for (int j = 0; j < sseats.length; j++)
-				if (seat[i].equals(sseats[j])) {
-					show.setSeatNA(j);
+			for (int j = 0; j < seats.length; j++)
+				if (seat[i].equals(seats[j])) {
+					show.setSeat(j);
 					flag = true;
 				}
-
 
 		if (flag) {
 			bookList.add(p.getPatronNumber() + " " + name + " " + date);
