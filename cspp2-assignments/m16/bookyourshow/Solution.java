@@ -71,40 +71,40 @@ class Patron {
     /**
      * patron name.
      */
-    private String Patron_name;
+    private String patronname;
     /**
      * patron mobile number.
      */
-    private String Patron_number;
+    private String patronnumber;
     /**
      * Constructs the object.
      * @param      name    The name
      * @param      number  The number
      */
     Patron(final String name, final String number) {
-        Patron_name = name;
-        Patron_number = number;
+        patronname = name;
+        patronnumber = number;
     }
     /**
      * Gets the patron name.
      * @return     The patron name.
      */
     String getPatronName() {
-        return Patron_name;
+        return patronname;
     }
     /**
      * Gets the patron number.
      * @return     The patron number.
      */
     String getPatronNumber() {
-        return Patron_number;
+        return patronnumber;
     }
     /**
      * Returns a string representation of the object.
      * @return     String representation of the object.
      */
     public String toString() {
-        return Patron_name + "," + Patron_number;
+        return patronname + "," + patronnumber;
     }
 }
 class BookYourShow {
