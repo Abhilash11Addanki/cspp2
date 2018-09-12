@@ -5,8 +5,17 @@ import java.util.Arrays;
  * Class for show.
  */
 class Show {
+    /**
+     * moviename.
+     */
     String moviename;
+    /**
+     * date and time of the movie.
+     */
     String datetime;
+    /**
+     * seat numbers.
+     */
     String[] seats;
     Show(String name, String date, String[] seat) {
         moviename = name;
