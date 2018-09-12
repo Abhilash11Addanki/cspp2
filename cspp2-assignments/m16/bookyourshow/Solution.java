@@ -107,13 +107,33 @@ class Patron {
         return patronname + "," + patronnumber;
     }
 }
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
+    /**
+     * showList.
+     */
     ArrayList<Show> showList = new ArrayList<Show>();
+    /**
+     * bookList.
+     */
     ArrayList<String> bookList = new ArrayList<String>();
-    void addAShow(Show show) {
+    /**
+     * Adds a show.
+     * @param      show  The show
+     */
+    void addAShow(final Show show) {
         showList.add(show);
     }
-    void bookAShow(String name, String date, Patron p, String[] seat) {
+    /**
+     * books a show.
+     * @param      name  The name
+     * @param      date  The date
+     * @param      p     { parameter_description }
+     * @param      seat  The seat
+     */
+    void bookAShow(final String name, final String date, final Patron p, final String[] seat) {
         Show show = getAShow(name, date);
         if (show == null) {
             System.out.println("No show");
@@ -132,7 +152,13 @@ class BookYourShow {
             bookList.add(p.getPatronNumber() + " " + name + " " + date);
         }
     }
-    Show getAShow(String name, String date) {
+    /**
+     * Gets a show.
+     * @param      name  The name
+     * @param      date  The date
+     * @return     A show.
+     */
+    Show getAShow(final String name, final String date) {
         for (Show s : showList) {
             if (s.getMovie().equals(name) && s.getTime().equals(date)) {
                 return s;
@@ -140,13 +166,22 @@ class BookYourShow {
         }
         return null;
     }
-    void printTicket(String name, String date, String num) {
+    /**
+     * print the Ticket.
+     * @param      name  The name
+     * @param      date  The date
+     * @param      num   The number
+     */
+    void printTicket(final String name, final String date, final String num) {
         String s = num + " " + name + " " + date;
         if (bookList.contains(s))
             System.out.println(s);
         else
             System.out.println("Invalid");
     }
+    /**
+     * Shows all.
+     */
     void showAll() {
         for (Show show : showList)
             System.out.println(show.toString() + "," + Arrays.toString(show.getSeats()).replace(" ", ""));
