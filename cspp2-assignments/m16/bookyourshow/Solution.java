@@ -179,8 +179,7 @@ class BookYourShow {
         String s = num + " " + name + " " + date;
         if (bookList.contains(s)) {
             System.out.println(s);
-        }
-        else {
+        } else {
             System.out.println("Invalid");
         }
     }
@@ -189,8 +188,8 @@ class BookYourShow {
      */
     void showAll() {
         for (Show show : showList) {
-            System.out.println(show.toString() + "," +
-                Arrays.toString(show.getSeats()).replace(" ", ""));
+            System.out.println(show.toString() + ","
+                               + Arrays.toString(show.getSeats()).replace(" ", ""));
         }
     }
 }
