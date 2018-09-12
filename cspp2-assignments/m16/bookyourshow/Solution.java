@@ -36,7 +36,10 @@ class BookYourShow {
 		patron_num = p.Patron_number;
 	}
 	String getAShow(String name, String date) {
-		return name + "," + date;
+		if (movie == name && date == timedate) {
+			return name + "," + date;
+		}
+		return null;
 	}
 	void printTicket(String name, String date, String num) {
 		if (movie == name && date == timedate && num == patron_num) {
