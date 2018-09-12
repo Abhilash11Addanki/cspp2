@@ -28,18 +28,38 @@ class Show {
         datetime = date;
         seats = seat;
     }
+    /**
+     * Gets the movie.
+     * @return     The movie.
+     */
     String getMovie() {
         return moviename;
     }
+    /**
+     * Gets the time.
+     * @return     The time.
+     */
     String getTime() {
         return datetime;
     }
+    /**
+     * Gets the seats.
+     * @return     The seats.
+     */
     String[] getSeats() {
         return seats;
     }
+    /**
+     * Sets the seat.
+     * @param      index  The index
+     */
     void setSeat(int index) {
         seats[index] = "N/A";
     }
+    /**
+     * Returns a string representation of the object.
+     * @return     String representation of the object.
+     */
     public String toString() {
         return moviename + "," + datetime;
     }
