@@ -189,7 +189,7 @@ class BookYourShow {
     void showAll() {
         for (Show show : showList) {
             System.out.println(show.toString() + ","
-                               + Arrays.toString(show.getSeats()).replace(" ", ""));
+            + Arrays.toString(show.getSeats()).replace(" ", ""));
         }
     }
 }
