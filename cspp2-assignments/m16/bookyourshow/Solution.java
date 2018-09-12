@@ -8,15 +8,15 @@ class Show {
     /**
      * moviename.
      */
-    String moviename;
+    private String moviename;
     /**
      * date and time of the movie.
      */
-    String datetime;
+    private String datetime;
     /**
      * seat numbers.
      */
-    String[] seats;
+    private String[] seats;
     Show(String name, String date, String[] seat) {
         moviename = name;
         datetime = date;
