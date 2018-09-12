@@ -53,7 +53,7 @@ class Show {
      * Sets the seat.
      * @param      index  The index
      */
-    void setSeat(int index) {
+    void setSeat(final int index) {
         seats[index] = "N/A";
     }
     /**
@@ -64,20 +64,45 @@ class Show {
         return moviename + "," + datetime;
     }
 }
-
+/**
+ * Class for patron.
+ */
 class Patron {
-    String Patron_name;
-    String Patron_number;
-    Patron(String name, String number) {
+    /**
+     * patron name.
+     */
+    private String Patron_name;
+    /**
+     * patron mobile number.
+     */
+    private String Patron_number;
+    /**
+     * Constructs the object.
+     * @param      name    The name
+     * @param      number  The number
+     */
+    Patron(final String name, final String number) {
         Patron_name = name;
         Patron_number = number;
     }
+    /**
+     * Gets the patron name.
+     * @return     The patron name.
+     */
     String getPatronName() {
         return Patron_name;
     }
+    /**
+     * Gets the patron number.
+     * @return     The patron number.
+     */
     String getPatronNumber() {
         return Patron_number;
     }
+    /**
+     * Returns a string representation of the object.
+     * @return     String representation of the object.
+     */
     public String toString() {
         return Patron_name + "," + Patron_number;
     }
