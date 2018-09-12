@@ -177,17 +177,21 @@ class BookYourShow {
      */
     void printTicket(final String name, final String date, final String num) {
         String s = num + " " + name + " " + date;
-        if (bookList.contains(s))
+        if (bookList.contains(s)) {
             System.out.println(s);
-        else
+        }
+        else {
             System.out.println("Invalid");
+        }
     }
     /**
      * Shows all.
      */
     void showAll() {
-        for (Show show : showList)
-            System.out.println(show.toString() + "," + Arrays.toString(show.getSeats()).replace(" ", ""));
+        for (Show show : showList) {
+            System.out.println(show.toString() + "," +
+                Arrays.toString(show.getSeats()).replace(" ", ""));
+        }
     }
 }
 /**
