@@ -58,10 +58,10 @@ class BookYourShow {
 		}
 		boolean flag = false;
 		String[] sseats = show.getSeats();
-		for (String seat_num : seat)
-			for (int i = 0; i < sseats.length; i++)
-				if (seat_num.equals(sseats[i])) {
-					show.setSeatNA(i);
+		for (int i = 0; i < seat.length; i++)
+			for (int j = 0; j < sseats.length; i++)
+				if (seat[i].equals(sseats[j])) {
+					show.setSeatNA(j);
 					flag = true;
 				}
 
@@ -71,9 +71,9 @@ class BookYourShow {
 		}
 	}
 	Show getAShow(String name, String date) {
-		for (Show show : showList) {
-			if (show.getMovie().equals(name) && show.getTime().equals(date)) {
-				return show;
+		for (Show s : showList) {
+			if (s.getMovie().equals(name) && s.getTime().equals(date)) {
+				return s;
 			}
 		}
 		return null;
