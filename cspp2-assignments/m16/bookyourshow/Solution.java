@@ -133,7 +133,8 @@ class BookYourShow {
      * @param      p     { parameter_description }
      * @param      seat  The seat
      */
-    void bookAShow(final String name, final String date, final Patron p, final String[] seat) {
+    void bookAShow(final String name, final String date,
+                   final Patron p, final String[] seat) {
         Show show = getAShow(name, date);
         if (show == null) {
             System.out.println("No show");
@@ -141,12 +142,14 @@ class BookYourShow {
         }
         boolean flag = false;
         String[] seats = show.getSeats();
-        for (int i = 0; i < seat.length; i++)
-            for (int j = 0; j < seats.length; j++)
+        for (int i = 0; i < seat.length; i++) {
+            for (int j = 0; j < seats.length; j++) {
                 if (seat[i].equals(seats[j])) {
                     show.setSeat(j);
                     flag = true;
                 }
+            }
+        }
 
         if (flag) {
             bookList.add(p.getPatronNumber() + " " + name + " " + date);
