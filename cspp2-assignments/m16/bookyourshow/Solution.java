@@ -17,7 +17,13 @@ class Show {
      * seat numbers.
      */
     private String[] seats;
-    Show(String name, String date, String[] seat) {
+    /**
+     * Constructs the object.
+     * @param      name  The name
+     * @param      date  The date
+     * @param      seat  The seat
+     */
+    Show(final String name, final String date, final String[] seat) {
         moviename = name;
         datetime = date;
         seats = seat;
