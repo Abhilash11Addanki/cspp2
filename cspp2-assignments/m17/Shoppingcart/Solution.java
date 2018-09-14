@@ -93,18 +93,18 @@ class ShoppingCart {
 		}
 		return (sum + 0.15 * sum + discount);
 	}
-	void applyCoupon(String coupon) {
-		if (coupon.equals("IND10")) {
-			discount = (10 / 100) * sum;
-		} else if (coupon.equals("IND20")) {
-			discount = (20 / 100) * sum;
-		} else if (coupon.equals("IND30")) {
-			discount = (30 / 100) * sum;
-		} else if (coupon.equals("IND50")) {
-			discount = (50 / 100) * sum;
+	void applyCoupon(int coupon) {
+		if (coupon == 10){
+			discount = (coupon / 100) * sum;
+		} else if (coupon == 20) {
+			discount = (coupon / 100) * sum;
+		} else if (coupon == 30) {
+			discount = (coupon / 100) * sum;
+		} else if (coupon == 50) {
+			discount = (coupon / 100) * sum;
 		}
 	}
-	void print() {
+	void printInvoice() {
 		double amount = getPayableAmount();
 		System.out.println("Name" + "   " + "quantity" + "   " + "Price");
 		showCatalog();
@@ -147,13 +147,13 @@ class Solution {
 				sc.removeFromCart(new Item(check[1], Integer.parseInt(tokens[1])));
 				break;
 			case "coupon":
-				sc.applyCoupon(check[1]);
+				sc.applyCoupon(Integer.parseInt(check[1].replace("IND", "")));
 				break;
 			case "payableAmount":
 				System.out.println("Payable amount: " + sc.getPayableAmount());
 				break;
 			case "print":
-				sc.print();
+				sc.printInvoice();
 				break;
 			default:
 				break;
