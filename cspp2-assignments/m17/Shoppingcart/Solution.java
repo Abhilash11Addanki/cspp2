@@ -111,7 +111,7 @@ class ShoppingCart {
 		System.out.println("Total:" + sum);
 		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + 0.15 * sum);
-		System.out.println("Payable amount" + amount);
+		System.out.println("Payable amount: " + amount);
 	}
 }
 class Solution {
@@ -150,7 +150,7 @@ class Solution {
 				sc.applyCoupon(check[1]);
 				break;
 			case "payableAmount":
-				System.out.println("payableAmount: " + sc.getPayableAmount());
+				System.out.println("Payable amount: " + sc.getPayableAmount());
 				break;
 			case "print":
 				sc.print();
