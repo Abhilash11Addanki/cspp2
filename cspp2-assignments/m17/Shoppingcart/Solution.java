@@ -200,7 +200,7 @@ class ShoppingCart {
      * @return     The payable amount.
      */
     double getPayableAmount() {
-        double tax = 1.15;
+        final double tax = 1.15;
         return (getTotalAmount() - discount) * tax;
     }
     /**
@@ -210,12 +210,14 @@ class ShoppingCart {
         double amount = getPayableAmount();
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         for (Item item : cartlist) {
-            System.out.println(item.getproductname() + " " + item.getquantity() + " " + item.getprice());
+            System.out.println(item.getproductname() + " "
+                + item.getquantity() + " " + item.getprice());
         }
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
-        System.out.println("Tax:" + 0.15 * (getTotalAmount() - discount));
-        System.out.printf("Payable amount: %.1f\n" , amount);
+        final double t = 0.15;
+        System.out.println("Tax:" + t * (getTotalAmount() - discount));
+        System.out.printf("Payable amount: %.1f\n", amount);
     }
 }
 /**
