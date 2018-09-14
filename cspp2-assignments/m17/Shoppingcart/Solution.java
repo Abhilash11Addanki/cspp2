@@ -152,6 +152,9 @@ class Solution {
 			case "payableAmount":
 				System.out.println("payableAmount: " + sc.getPayableAmount());
 				break;
+			case "print":
+				sc.print();
+				break;
 			default:
 				break;
 			}
