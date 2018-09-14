@@ -63,13 +63,11 @@ class ShoppingCart {
 	void removeFromCart(final Item item) {
 		for (Item itemc : cartlist) {
 			if (itemc.getproductname().equals(item.getproductname())) {
-				if (itemc.getquantity() == item.getquantity()) {
+				itemc.setquantity(itemc.getquantity()-item.getquantity());
+				if (itemc.getquantity() == 0) {
 					cartlist.remove(itemc);
-				} else {
-					int newprice;
-					newprice = itemc.getquantity() - item.getquantity();
-					itemc.setquantity(newprice);
 				}
+				break;
 			}
 		}
 	}
