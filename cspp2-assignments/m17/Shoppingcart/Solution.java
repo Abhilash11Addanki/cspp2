@@ -91,6 +91,7 @@ class ShoppingCart {
 	void applyCoupon(int coupon) {
 		if (coupon != 10 && coupon != 20 && coupon != 30 && coupon != 50) {
 			System.out.println("Invalid coupon");
+			return;
 		}
 		if (flag) {
 			double amount = getTotalAmount();
