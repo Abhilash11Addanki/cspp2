@@ -245,7 +245,7 @@ final class Solution {
             case "Item":
                 final int three = 3;
                 sc.addToCatalog(new Item(tokens[1],
-                                         Integer.parseInt(tokens[2]), Float.valueOf(tokens[three])));
+                Integer.parseInt(tokens[2]), Float.valueOf(tokens[three])));
                 break;
 
             case "add":
