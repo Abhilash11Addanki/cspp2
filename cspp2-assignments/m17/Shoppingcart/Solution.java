@@ -44,7 +44,19 @@ class ShoppingCart {
 	void addToCart(final Item item) {
 		for (Item itemc : cataloglist) {
 			if (itemc.getproductname().equals(item.getproductname())) {
-				cartlist.add(item);
+				item.setprice(itemc.getprice());
+				Item temp = null;
+				for (Item j : cartlist) {
+					if (j.getproductname().equals(item.getproductname())) {
+						j.setquantity(j.getquantity() + item.getquantity());
+						temp = j;
+						break;
+					}
+				}
+				if (temp == null) {
+					cartlist.add(item);
+				}
+				break;
 			}
 		}
 	}
@@ -94,7 +106,7 @@ class ShoppingCart {
 		return (sum + 0.15 * sum + discount);
 	}
 	void applyCoupon(int coupon) {
-		if (coupon == 10){
+		if (coupon == 10) {
 			discount = (coupon / 100) * sum;
 		} else if (coupon == 20) {
 			discount = (coupon / 100) * sum;
