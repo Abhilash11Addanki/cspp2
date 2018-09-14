@@ -147,7 +147,7 @@ class Solution {
 				sc.removeFromCart(new Item(check[1], Integer.parseInt(tokens[1])));
 				break;
 			case "coupon":
-				sc.applyCoupon(check[1]);
+				sc.applyCoupon(tokens[1]);
 				break;
 			case "payableAmount":
 				System.out.println("Payable amount: " + sc.getPayableAmount());
