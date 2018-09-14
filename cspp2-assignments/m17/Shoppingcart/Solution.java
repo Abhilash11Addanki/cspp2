@@ -122,14 +122,14 @@ class Solution {
 		for (int i = 0; i < testCases; i++) {
 			String[] tokens = scan.nextLine().
 			                  replace("[", "").replace("]", "").split(",");
-			String[] check = tokens[0].split(" ");
-			switch (check[0]) {
+			switch (tokens[0]) {
 			case "Item":
-				sc.addToCatalog(new Item(check[1], Integer.parseInt(tokens[1]), Float.valueOf(tokens[2])));
+			final int three = 3;
+				sc.addToCatalog(new Item(tokens[1], Integer.parseInt(tokens[2]), Float.valueOf(tokens[three])));
 				break;
 
 			case "add":
-				sc.addToCart(new Item(check[1], Integer.parseInt(tokens[1])));
+				sc.addToCart(new Item(tokens[1], Integer.parseInt(tokens[2])));
 				break;
 
 			case "catalog":
@@ -144,10 +144,10 @@ class Solution {
 				System.out.println("totalAmount: " + sc.getTotalAmount());
 				break;
 			case "remove":
-				sc.removeFromCart(new Item(check[1], Integer.parseInt(tokens[1])));
+				sc.removeFromCart(new Item(tokens[1], Integer.parseInt(tokens[2])));
 				break;
 			case "coupon":
-				sc.applyCoupon(check[1]);
+				sc.applyCoupon(tokens[1]);
 				break;
 			case "payableAmount":
 				System.out.println("Payable amount: " + sc.getPayableAmount());
