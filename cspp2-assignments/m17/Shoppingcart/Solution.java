@@ -179,7 +179,11 @@ class ShoppingCart {
      * @param      coupon  The coupon
      */
     void applyCoupon(final int coupon) {
-        if (coupon != 10 && coupon != 20 && coupon != 30 && coupon != 50) {
+        final int ten = 10;
+        final int twenty = 20;
+        final int thirty = 30;
+        final int fifty = 50;
+        if (coupon != ten && coupon != twenty && coupon != thirty && coupon != fifty) {
             System.out.println("Invalid coupon");
             return;
         }
