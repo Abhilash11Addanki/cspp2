@@ -150,7 +150,8 @@ class ShoppingCart {
      */
     void showCart() {
         for (Item item : cartlist) {
-            System.out.println(item.getproductname() + " " + item.getquantity());
+            System.out.println(item.getproductname() + " "
+                + item.getquantity());
         }
     }
     /**
@@ -158,7 +159,8 @@ class ShoppingCart {
      */
     void showCatalog() {
         for (Item item : cataloglist) {
-            System.out.println(item.getproductname() + " " + item.getquantity() + " " + item.getprice());
+            System.out.println(item.getproductname() + " "
+                + item.getquantity() + " " + item.getprice());
         }
     }
     /**
