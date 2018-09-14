@@ -36,6 +36,7 @@ class Item {
 class ShoppingCart {
 	double sum = 0;
 	double discount = 0;
+	boolean flag = true;
 	private ArrayList<Item> cataloglist = new ArrayList<Item>();
 	private ArrayList<Item> cartlist = new ArrayList<Item>();
 	void addToCatalog(final Item item) {
@@ -89,14 +90,15 @@ class ShoppingCart {
 		return sum;
 	}
 	void applyCoupon(int coupon) {
-		if (coupon == 10) {
-			discount = (coupon / 100) * sum;
-		} else if (coupon == 20) {
-			discount = (coupon / 100) * sum;
-		} else if (coupon == 30) {
-			discount = (coupon / 100) * sum;
-		} else if (coupon == 50) {
-			discount = (coupon / 100) * sum;
+		if (discount != 10 && discount != 20 && discount != 30 && discount != 50) {
+			System.out.println("Invalid coupon");
+		}
+		if (flag) {
+			double amount = getTotalAmount();
+			final double denom = 100;
+			discount = (amount * coupon) / denom;
+			//System.out.println(this.discount);
+			flag = false;
 		}
 	}
 	double getPayableAmount() {
