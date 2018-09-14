@@ -57,7 +57,6 @@ class ShoppingCart {
 					int newprice;
 					newprice = itemc.getquantity() - item.getquantity();
 					itemc.setquantity(newprice);
-					item.setquantity(newprice);
 				}
 			}
 		}
