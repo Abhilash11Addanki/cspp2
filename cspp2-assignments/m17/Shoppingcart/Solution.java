@@ -90,14 +90,13 @@ class ShoppingCart {
 		return sum;
 	}
 	void applyCoupon(int coupon) {
-		if (discount != 10 && discount != 20 && discount != 30 && discount != 50) {
+		if (coupon != 10 && coupon != 20 && coupon != 30 && coupon != 50) {
 			System.out.println("Invalid coupon");
 		}
 		if (flag) {
 			double amount = getTotalAmount();
 			final double denom = 100;
 			discount = (amount * coupon) / denom;
-			//System.out.println(this.discount);
 			flag = false;
 		}
 	}
