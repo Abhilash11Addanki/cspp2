@@ -100,8 +100,8 @@ class ShoppingCart {
 		}
 	}
 	double getPayableAmount() {
-		double tax = 0.15 * getTotalAmount();
-		return (getTotalAmount() - discount) + tax;
+		double tax = 1.15;
+		return (getTotalAmount() - discount) * tax;
 	}
 	void printInvoice() {
 		double amount = getPayableAmount();
