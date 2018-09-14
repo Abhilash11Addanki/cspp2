@@ -63,7 +63,7 @@ class ShoppingCart {
 	void removeFromCart(final Item item) {
 		for (Item itemc : cartlist) {
 			if (itemc.getproductname().equals(item.getproductname())) {
-				itemc.setquantity(itemc.getquantity()-item.getquantity());
+				itemc.setquantity(itemc.getquantity() - item.getquantity());
 				if (itemc.getquantity() == 0) {
 					cartlist.remove(itemc);
 				}
@@ -90,7 +90,7 @@ class ShoppingCart {
 	}
 	double getPayableAmount() {
 		double tax = 0.15 * getTotalAmount();
-		return (getTotalAmount() - discount) * tax;
+		return (getTotalAmount() - discount) + tax;
 	}
 	void applyCoupon(int coupon) {
 		if (coupon == 10) {
