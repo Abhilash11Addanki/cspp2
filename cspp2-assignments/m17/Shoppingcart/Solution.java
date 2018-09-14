@@ -57,6 +57,7 @@ class ShoppingCart {
 					int newprice;
 					newprice = itemc.getquantity() - item.getquantity();
 					itemc.setquantity(newprice);
+					item.setquantity(newprice);
 				}
 			}
 		}
@@ -107,7 +108,7 @@ class ShoppingCart {
 	void print() {
 		double amount = getPayableAmount();
 		System.out.println("Name" + "   " + "quantity" + "   " + "Price");
-		showCart();
+		showCatalog();
 		System.out.println("Total:" + sum);
 		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + 0.15 * sum);
