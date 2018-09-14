@@ -118,7 +118,7 @@ class ShoppingCart {
                 for (Item item1 : cartlist) {
                     if (item1.getproductname().equals(item.getproductname())) {
                         item1.setquantity(item1.getquantity()
-                            + item.getquantity());
+                                          + item.getquantity());
                         temp = item1;
                         break;
                     }
@@ -151,7 +151,7 @@ class ShoppingCart {
     void showCart() {
         for (Item item : cartlist) {
             System.out.println(item.getproductname() + " "
-                + item.getquantity());
+                               + item.getquantity());
         }
     }
     /**
@@ -160,7 +160,7 @@ class ShoppingCart {
     void showCatalog() {
         for (Item item : cataloglist) {
             System.out.println(item.getproductname() + " "
-                + item.getquantity() + " " + item.getprice());
+                               + item.getquantity() + " " + item.getprice());
         }
     }
     /**
@@ -184,7 +184,7 @@ class ShoppingCart {
         final int thirty = 30;
         final int fifty = 50;
         if (coupon != ten && coupon != twenty
-            && coupon != thirty && coupon != fifty) {
+                && coupon != thirty && coupon != fifty) {
             System.out.println("Invalid coupon");
             return;
         }
@@ -211,7 +211,7 @@ class ShoppingCart {
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         for (Item item : cartlist) {
             System.out.println(item.getproductname() + " "
-                + item.getquantity() + " " + item.getprice());
+                               + item.getquantity() + " " + item.getprice());
         }
         System.out.println("Total:" + getTotalAmount());
         System.out.println("Disc%:" + discount);
@@ -243,9 +243,9 @@ final class Solution {
                               replace(" ", ",").split(",");
             switch (tokens[0]) {
             case "Item":
-            final int three = 3;
+                final int three = 3;
                 sc.addToCatalog(new Item(tokens[1],
-                    Integer.parseInt(tokens[2]), Float.valueOf(tokens[3])));
+                                         Integer.parseInt(tokens[2]), Float.valueOf(tokens[three])));
                 break;
 
             case "add":
@@ -265,14 +265,14 @@ final class Solution {
                 break;
             case "remove":
                 sc.removeFromCart(new Item(tokens[1],
-                    Integer.parseInt(tokens[2])));
+                                           Integer.parseInt(tokens[2])));
                 break;
             case "coupon":
                 sc.applyCoupon(Integer.parseInt(tokens[1].replace("IND", "")));
                 break;
             case "payableAmount":
                 System.out.printf("Payable amount: %.1f\n",
-                    sc.getPayableAmount());
+                                  sc.getPayableAmount());
                 break;
             case "print":
                 sc.printInvoice();
