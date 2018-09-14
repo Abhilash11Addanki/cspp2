@@ -34,7 +34,6 @@ class Item {
 	}
 }
 class ShoppingCart {
-	double sum = 0;
 	double discount = 0;
 	boolean flag = true;
 	private ArrayList<Item> cataloglist = new ArrayList<Item>();
@@ -83,7 +82,7 @@ class ShoppingCart {
 		}
 	}
 	double getTotalAmount() {
-		sum = 0;
+		double sum = 0;
 		for (Item item : cartlist) {
 			sum += item.getquantity() * item.getprice();
 		}
@@ -110,9 +109,9 @@ class ShoppingCart {
 		for (Item item : cartlist) {
 			System.out.println(item.getproductname() + " " + item.getquantity() + " " + item.getprice());
 		}
-		System.out.println("Total:" + sum);
+		System.out.println("Total:" + getTotalAmount());
 		System.out.println("Disc%:" + discount);
-		System.out.println("Tax:" + 0.15 * sum);
+		System.out.println("Tax:" + 0.15 * getTotalAmount());
 		System.out.println("Payable amount: " + amount);
 	}
 }
