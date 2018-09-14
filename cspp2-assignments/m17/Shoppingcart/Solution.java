@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.ArrayList;
 /**
  * Class for item.
@@ -23,7 +22,7 @@ class Item {
      * @param      pquantity  The pquantity
      * @param      pprice     The pprice
      */
-    Item (final String pname, final int pquantity, final float pprice) {
+    Item(final String pname, final int pquantity, final float pprice) {
         productname = pname;
         quantity = pquantity;
         price = pprice;
@@ -33,7 +32,7 @@ class Item {
      * @param      pname      The pname
      * @param      pquantity  The pquantity
      */
-    Item (final String pname, final int pquantity) {
+    Item(final String pname, final int pquantity) {
         productname = pname;
         quantity = pquantity;
     }
@@ -95,18 +94,11 @@ class ShoppingCart {
     /**
      * cataloglist.
      */
-    private ArrayList<Item> cataloglist;
+    private ArrayList<Item> cataloglist = new ArrayList<Item>();
     /**
      * cartlist.
      */
-    private ArrayList<Item> cartlist;
-    /**
-     * Constructs the object.
-     */
-    ShoppingCart() {
-        cataloglist = new ArrayList<Item>();
-        cartlist = new ArrayList<Item>();
-    }
+    private ArrayList<Item> cartlist = new ArrayList<Item>();
     /**
      * Adds to catalog.
      * @param      item  The item
