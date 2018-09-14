@@ -119,7 +119,9 @@ class ShoppingCart {
 	void printInvoice() {
 		double amount = getPayableAmount();
 		System.out.println("Name" + "   " + "quantity" + "   " + "Price");
-		showCatalog();
+		for (Item item : cartlist) {
+			System.out.println(item);
+		}
 		System.out.println("Total:" + sum);
 		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + 0.15 * sum);
