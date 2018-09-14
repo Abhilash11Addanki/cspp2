@@ -113,7 +113,7 @@ class ShoppingCart {
 		System.out.println("Total:" + getTotalAmount());
 		System.out.println("Disc%:" + discount);
 		System.out.println("Tax:" + 0.15 * (getTotalAmount() - discount));
-		System.out.println("Payable amount: " + amount);
+		System.out.printf("Payable amount: %.1f\n" , amount);
 	}
 }
 class Solution {
