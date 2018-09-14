@@ -117,7 +117,8 @@ class ShoppingCart {
                 Item temp = null;
                 for (Item item1 : cartlist) {
                     if (item1.getproductname().equals(item.getproductname())) {
-                        item1.setquantity(item1.getquantity() + item.getquantity());
+                        item1.setquantity(item1.getquantity()
+                            + item.getquantity());
                         temp = item1;
                         break;
                     }
