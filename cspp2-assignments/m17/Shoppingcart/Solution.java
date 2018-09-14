@@ -120,7 +120,7 @@ class ShoppingCart {
 		double amount = getPayableAmount();
 		System.out.println("Name" + "   " + "quantity" + "   " + "Price");
 		for (Item item : cartlist) {
-			System.out.println(item);
+			System.out.println(item.getproductname() + " " + item.getquantity() + " " + item.getprice());
 		}
 		System.out.println("Total:" + sum);
 		System.out.println("Disc%:" + discount);
