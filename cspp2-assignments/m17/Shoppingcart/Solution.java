@@ -64,7 +64,7 @@ class ShoppingCart {
 		for (Item itemc : cartlist) {
 			if (itemc.getproductname().equals(item.getproductname())) {
 				if (itemc.getquantity() == item.getquantity()) {
-					cartlist.remove(item);
+					cartlist.remove(itemc);
 				} else {
 					int newprice;
 					newprice = itemc.getquantity() - item.getquantity();
