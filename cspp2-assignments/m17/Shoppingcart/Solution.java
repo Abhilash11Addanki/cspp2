@@ -190,8 +190,8 @@ class ShoppingCart {
         }
         if (flag) {
             double amount = getTotalAmount();
-            final double denom = 100;
-            discount = (amount * coupon) / denom;
+            final double hundred = 100;
+            discount = (amount * coupon) / hundred;
             flag = false;
         }
     }
