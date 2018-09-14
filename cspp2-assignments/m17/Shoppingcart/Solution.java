@@ -84,24 +84,12 @@ class ShoppingCart {
 	double getTotalAmount() {
 		sum = 0;
 		for (Item item : cartlist) {
-			for (Item item1 : cataloglist) {
-				if (item.getproductname().equals(item1.getproductname())) {
-					sum += item1.getprice() * item.getquantity();
-				}
-			}
+			sum += item.getquantity() * item.getprice();
 		}
 		return sum;
 	}
 	double getPayableAmount() {
-		sum = 0;
-		for (Item item : cartlist) {
-			for (Item item1 : cataloglist) {
-				if (item.getproductname().equals(item1.getproductname())) {
-					sum += item1.getprice() * item.getquantity();
-				}
-			}
-		}
-		return (sum + 0.15 * sum + discount);
+		return (sum + 0.15 * sum - discount);
 	}
 	void applyCoupon(int coupon) {
 		if (coupon == 10) {
