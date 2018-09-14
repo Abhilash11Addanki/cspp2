@@ -264,13 +264,15 @@ final class Solution {
                 System.out.println("totalAmount: " + sc.getTotalAmount());
                 break;
             case "remove":
-                sc.removeFromCart(new Item(check[1], Integer.parseInt(tokens[1])));
+                sc.removeFromCart(new Item(check[1],
+                    Integer.parseInt(tokens[1])));
                 break;
             case "coupon":
                 sc.applyCoupon(Integer.parseInt(check[1].replace("IND", "")));
                 break;
             case "payableAmount":
-                System.out.printf("Payable amount: %.1f\n" , sc.getPayableAmount());
+                System.out.printf("Payable amount: %.1f\n",
+                    sc.getPayableAmount());
                 break;
             case "print":
                 sc.printInvoice();
