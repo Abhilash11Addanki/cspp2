@@ -89,7 +89,8 @@ class ShoppingCart {
 		return sum;
 	}
 	double getPayableAmount() {
-		return (sum + 0.15 * sum - discount);
+		double tax = 0.15 * getTotalAmount();
+		return (getTotalAmount() - discount) * tax;
 	}
 	void applyCoupon(int coupon) {
 		if (coupon == 10) {
