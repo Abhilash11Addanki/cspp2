@@ -244,7 +244,8 @@ final class Solution {
             String[] check = tokens[0].split(" ");
             switch (check[0]) {
             case "Item":
-                sc.addToCatalog(new Item(check[1], Integer.parseInt(tokens[1]), Float.valueOf(tokens[2])));
+                sc.addToCatalog(new Item(check[1],
+                    Integer.parseInt(tokens[1]), Float.valueOf(tokens[2])));
                 break;
 
             case "add":
