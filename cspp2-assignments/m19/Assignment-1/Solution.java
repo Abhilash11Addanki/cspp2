@@ -77,8 +77,7 @@ public final class Solution {
             final int five = 5;
             String q = s.nextLine();
             field = q.split(":");
-            field[0].replace(" ","");
-            if (field.length != five) {
+            if (field.length != five || field[0].equals("")) {
                 System.out.println("Error! Malformed question");
                 return;
             }
