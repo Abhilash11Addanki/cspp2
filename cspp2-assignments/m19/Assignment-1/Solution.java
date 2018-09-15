@@ -69,7 +69,10 @@ public final class Solution {
 		}
 		for (int i = 0; i < questionCount; i++) {
 			String q = s.nextLine();
-			System.out.println(q);
+			String[] field = q.split(":");
+			for (int j = 0; j < field.length; j++) {
+				System.out.println(field[j]);
+			}
 		}
 	}
 
