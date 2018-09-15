@@ -62,7 +62,7 @@ public final class Solution {
      * @param      questionCount  The question count
      */
     public static void loadQuestions(final Scanner s,
-        final Quiz quiz, final int questionCount) {
+                                     final Quiz quiz, final int questionCount) {
         /**
          * questions list.
          */
@@ -84,13 +84,13 @@ public final class Solution {
             String[] choices = field[1].split(",");
             if (choices.length < 2) {
                 System.out.println(field[0] + " "
-                    + "does not have enough answer choices");
+                        + "does not have enough answer choices");
                 return;
             }
             if (Integer.parseInt(field[2]) < 1
-                || Integer.parseInt(field[2]) > choices.length) {
-            System.out.println("Error! Correct answer choice number"
-                + "is out of range for" + " " + field[0]);
+                    || Integer.parseInt(field[2]) > choices.length) {
+                System.out.println("Error! Correct answer choice number"
+                        + " " + "is out of range for" + " " + field[0]);
                 return;
             }
             if (Integer.parseInt(field[3]) <= 0) {
