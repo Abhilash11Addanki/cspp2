@@ -61,7 +61,8 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+    public static void loadQuestions(final Scanner s,
+        final Quiz quiz, final int questionCount) {
         /**
          * questions list.
          */
@@ -73,9 +74,10 @@ public final class Solution {
             return;
         }
         for (int i = 0; i < questionCount; i++) {
+            final int five = 5;
             String q = s.nextLine();
             field = q.split(":");
-            if (field.length != 5) {
+            if (field.length != five) {
                 System.out.println("Error! Malformed question");
                 return;
             }
