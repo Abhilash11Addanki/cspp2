@@ -160,7 +160,7 @@ class Quiz {
     /**
      * sets choices.
      *
-     * @param      c     { parameter_description }
+     * @param      ch     { parameter_description }
      */
     void setchoices(final String ch) {
         choices.add(ch);
