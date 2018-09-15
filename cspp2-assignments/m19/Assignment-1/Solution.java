@@ -93,11 +93,13 @@ public final class Solution {
                         + " " + "is out of range for" + " " + field[0]);
                 return;
             }
-            if (Integer.parseInt(field[3]) <= 0) {
+            final int three = 3;
+            if (Integer.parseInt(field[three]) <= 0) {
                 System.out.println("Invalid max marks for" + " " + field[0]);
                 return;
             }
-            if (Integer.parseInt(field[4]) > 0) {
+            final int four = 4;
+            if (Integer.parseInt(field[four]) > 0) {
                 System.out.println("Invalid penalty for" + " " + field[0]);
                 return;
             }
@@ -113,10 +115,8 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
-        // write your code here to display the quiz questions
-        // read the user responses from the console
-        // store the user respones in the quiz object
+    public static void startQuiz(final Scanner s,
+        final Quiz quiz, final int answerCount) {
 
         /**
          * Displays the score report
