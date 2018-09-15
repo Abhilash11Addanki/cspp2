@@ -59,7 +59,7 @@ public final class Solution {
 	 * @param      quiz           The quiz object
 	 * @param      questionCount  The question count
 	 */
-	public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+	public static void loadQuestions(final Scanner s, Quiz quiz, final int questionCount) {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
@@ -94,6 +94,7 @@ public final class Solution {
 				System.out.println("Invalid penalty for" + " " + field[0]);
 				return;
 			}
+			quiz = new Quiz(field[0], choices, Integer.parseInt(field[2]), Integer.parseInt(field[3]), Integer.parseInt(field[4]));
 			questions.add(quiz);
 		}
 		System.out.println(questionCount + " " + "are added to the quiz");
@@ -124,9 +125,19 @@ public final class Solution {
 class Quiz {
 	private String questiontext;
 	private String[] choices;
-	private String correctanswer;
+	private int correctanswer;
 	private int marksawarded;
 	private int penalty;
+	Quiz() {
+
+	}
+	Quiz(String q, String[] ch, int c, int m, int p) {
+		questiontext = q;
+		choices = ch;
+		correctanswer = c;
+		marksawarded = m;
+		penalty = p;
+	}
 	String getquestiontext() {
 		return questiontext;
 	}
@@ -139,10 +150,10 @@ class Quiz {
 	void setchoices(String[] c) {
 		choices = c;
 	}
-	String getcorrectanswer() {
+	int getcorrectanswer() {
 		return correctanswer;
 	}
-	void setcorrectanswer(String c) {
+	void setcorrectanswer(int c) {
 		correctanswer = c;
 	}
 	int getmarksawarded() {
