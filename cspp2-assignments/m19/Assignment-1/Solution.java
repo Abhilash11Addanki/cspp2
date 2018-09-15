@@ -132,84 +132,38 @@ class Quiz {
     /**
      * questiontext.
      */
-    private String questiontext;
+    private ArrayList<String> questiontext = new ArrayList<String>();
     /**
      * choices.
      */
-    private String[] choices;
+    private ArrayList<String> choices = new ArrayList<String>();
     /**
      * correctanswer.
      */
-    private int correctanswer;
+    private ArrayList<Integer> correctanswer = new ArrayList<Integer>();
     /**
      * marksawarded.
      */
-    private int marksawarded;
+    private ArrayList<Integer> marksawarded = new ArrayList<Integer>();
     /**
      * penalty.
      */
-    private int penalty;
-    /**
-     * Constructs the object.
-     */
-    Quiz() {
-
-    }
-    /**
-     * Constructs the object.
-     * @param      q     The quarter
-     * @param      ch    { parameter_description }
-     * @param      c     { parameter_description }
-     * @param      m     { parameter_description }
-     * @param      p     { parameter_description }
-     */
-    Quiz(final String q, final String[] ch,
-         final int c, final int m, final int p) {
-        questiontext = q;
-        choices = ch;
-        correctanswer = c;
-        marksawarded = m;
-        penalty = p;
-    }
-    /**
-     * gets question text.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    String getquestiontext() {
-        return questiontext;
-    }
+    private ArrayList<Integer> penalty = new ArrayList<Integer>();
     /**
      * sets question text.
      *
      * @param      q     The quarter
      */
     void setquestiontext(final String q) {
-        questiontext = q;
-    }
-    /**
-     * gets choices.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    String[] getchoices() {
-        return choices;
+        questiontext.add(q);
     }
     /**
      * sets choices.
      *
      * @param      c     { parameter_description }
      */
-    void setchoices(final String[] c) {
-        choices = c;
-    }
-    /**
-     * gets correct answer.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int getcorrectanswer() {
-        return correctanswer;
+    void setchoices(final String ch) {
+        choices.add(ch);
     }
     /**
      * sets correct answer.
@@ -217,15 +171,7 @@ class Quiz {
      * @param      c     { parameter_description }
      */
     void setcorrectanswer(final int c) {
-        correctanswer = c;
-    }
-    /**
-     * gets marks awarded.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int getmarksawarded() {
-        return marksawarded;
+        correctanswer.add(c);
     }
     /**
      * sets marks awarded.
@@ -233,15 +179,7 @@ class Quiz {
      * @param      m     { parameter_description }
      */
     void setmarksawarded(final int m) {
-        marksawarded = m;
-    }
-    /**
-     * gets penalty.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    int getpenalty() {
-        return penalty;
+        marksawarded.add(m);
     }
     /**
      * sets penalty.
@@ -249,7 +187,7 @@ class Quiz {
      * @param      p     { parameter_description }
      */
     void setpenalty(final int p) {
-        penalty = p;
+        penalty.add(p);
     }
 }
 
