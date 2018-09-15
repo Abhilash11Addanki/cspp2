@@ -121,8 +121,8 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
         final Quiz quiz, final int answerCount) {
-        for (int i = 0; i < answerCount; i++) {
-            System.out.println(quiz.getquestiontext());
+        for(Quiz q : questions) {
+            System.out.println(q);
         }
     }
     /**
