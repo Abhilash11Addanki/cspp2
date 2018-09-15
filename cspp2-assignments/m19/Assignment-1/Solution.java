@@ -5,6 +5,9 @@ import java.util.ArrayList;
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * questions list.
+     */
     private static ArrayList<Quiz> questions = new ArrayList<Quiz>();
     /**
     * Constructs the object.
