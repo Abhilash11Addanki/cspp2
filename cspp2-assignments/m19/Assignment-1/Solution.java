@@ -74,6 +74,10 @@ public final class Solution {
 				System.out.println("Invalid max marks for" + " " + field[0]);
 				return;
 			}
+			if (Integer.parseInt(field[4]) > 0) {
+				System.out.println("Invalid penalty for" + " " + field[0]);
+				return;
+			}
 			for (int j = 0; j < field.length; j++) {
 				cnt++;
 			}
