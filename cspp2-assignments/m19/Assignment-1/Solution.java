@@ -6,10 +6,6 @@ import java.util.ArrayList;
  */
 public final class Solution {
     /**
-     * questions list.
-     */
-    private static ArrayList<Quiz> questions = new ArrayList<Quiz>();
-    /**
     * Constructs the object.
     */
     private Solution() {
@@ -106,8 +102,6 @@ public final class Solution {
                 System.out.println("Invalid penalty for" + " " + field[0]);
                 return;
             }
-            quiz.setquestiontext(field[0]);
-            questions.add(quiz);
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -121,9 +115,6 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
             final Quiz quiz, final int answerCount) {
-        for (Quiz q : questions) {
-            System.out.println(q.getquestiontext());
-        }
     }
     /**
      * Displays the score report.
