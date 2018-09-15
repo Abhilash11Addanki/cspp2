@@ -5,6 +5,7 @@ import java.util.ArrayList;
  * Solution class for code-eval.
  */
 public final class Solution {
+    private static ArrayList<Quiz> questions = new ArrayList<Quiz>();
     /**
     * Constructs the object.
     */
@@ -66,7 +67,6 @@ public final class Solution {
         /**
          * questions list.
          */
-        ArrayList<Quiz> questions = new ArrayList<Quiz>();
         int cnt = 0;
         String[] field = new String[questionCount];
         if (questionCount < 1) {
