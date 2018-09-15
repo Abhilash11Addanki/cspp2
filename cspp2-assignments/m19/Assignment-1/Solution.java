@@ -71,28 +71,29 @@ public final class Solution {
 		for (int i = 0; i < questionCount; i++) {
 			String q = s.nextLine();
 			field = q.split(":");
+			if (field.length != 5) {
+				System.out.println("Error! Malformed question");
+				return;
+			}
+			String[] choices = field[1].split(",");
+			if (choices.length < 2) {
+				System.out.println(field[0] + " " + "does not have enough answer choices");
+				return;
+			}
+			if (Integer.parseInt(field[2]) < 1 || Integer.parseInt(field[2]) >= choices.length) {
+				System.out.println("Error! Correct answer choice number is out of range for" + " " + field[0]);
+				return;
+			}
+			if (Integer.parseInt(field[3]) <= 0) {
+				System.out.println("Invalid max marks for" + " " + field[0]);
+				return;
+			}
+			if (Integer.parseInt(field[4]) > 0) {
+				System.out.println("Invalid penalty for" + " " + field[0]);
+				return;
+			}
 		}
-		if (field.length != 5) {
-			System.out.println("Error! Malformed question");
-			return;
-		}
-		String[] choices = field[1].split(",");
-		if (choices.length < 2) {
-			System.out.println(field[0] + " " + "does not have enough answer choices");
-			return;
-		}
-		if (Integer.parseInt(field[2]) < 1 || Integer.parseInt(field[2]) >= choices.length) {
-			System.out.println("Error! Correct answer choice number is out of range for" + " " + field[0]);
-			return;
-		}
-		if (Integer.parseInt(field[3]) <= 0) {
-			System.out.println("Invalid max marks for" + " " + field[0]);
-			return;
-		}
-		if (Integer.parseInt(field[4]) > 0) {
-			System.out.println("Invalid penalty for" + " " + field[0]);
-			return;
-		}
+		System.out.println(questionCount + " " + "are added to the quiz");
 	}
 
 	/**
