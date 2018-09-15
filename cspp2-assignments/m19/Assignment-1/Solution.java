@@ -118,12 +118,12 @@ public final class Solution {
     public static void startQuiz(final Scanner s,
         final Quiz quiz, final int answerCount) {
 
-        /**
-         * Displays the score report
-         *
-         * @param      quiz     The quiz object
-         */
     }
+    /**
+     * Displays the score report.
+     *
+     * @param      quiz  The quiz
+     */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
     }
