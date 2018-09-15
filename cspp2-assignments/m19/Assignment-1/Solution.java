@@ -122,7 +122,7 @@ public final class Solution {
     public static void startQuiz(final Scanner s,
             final Quiz quiz, final int answerCount) {
         for (Quiz q : questions) {
-            System.out.println(q);
+            System.out.println(q.getquestiontext());
         }
     }
     /**
