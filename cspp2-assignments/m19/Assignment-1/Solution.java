@@ -102,6 +102,7 @@ public final class Solution {
                 System.out.println("Invalid penalty for" + " " + field[0]);
                 return;
             }
+            quiz.setquestiontext(choices[0]);
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
