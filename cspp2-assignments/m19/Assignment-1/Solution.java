@@ -63,16 +63,22 @@ public final class Solution {
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
 		int cnt = 0;
+		String[] field = new String[questionCount];
 		if (questionCount < 1) {
 			System.out.println("Quiz does not have questions");
 			return;
 		}
 		for (int i = 0; i < questionCount; i++) {
 			String q = s.nextLine();
-			String[] field = q.split(":");
-			for (int j = 0; j < field.length; j++) {
-				System.out.println(field[j]);
-			}
+			field = q.split(":");
+		}
+		if (Integer.parseInt(field[3]) <= 0) {
+			System.out.println("Invalid max marks for" + " " + field[0]);
+			return;
+		}
+		if (Integer.parseInt(field[4]) > 0) {
+			System.out.println("Invalid penalty for" + " " + field[0]);
+			return;
 		}
 	}
 
