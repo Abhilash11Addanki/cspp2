@@ -74,6 +74,7 @@ public final class Solution {
 		}
 		if (field.length != 5) {
 			System.out.println("Error! Malformed question");
+			return;
 		}
 		String[] choices = field[1].split(",");
 		if (choices.length < 2) {
