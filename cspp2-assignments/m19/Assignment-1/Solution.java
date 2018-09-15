@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Solution class for code-eval.
@@ -62,6 +63,7 @@ public final class Solution {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
+		ArrayList<Quiz> questions = new ArrayList<Quiz>();
 		int cnt = 0;
 		String[] field = new String[questionCount];
 		if (questionCount < 1) {
@@ -92,6 +94,7 @@ public final class Solution {
 				System.out.println("Invalid penalty for" + " " + field[0]);
 				return;
 			}
+			questions.add(quiz);
 		}
 		System.out.println(questionCount + " " + "are added to the quiz");
 	}
