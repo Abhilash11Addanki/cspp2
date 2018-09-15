@@ -62,16 +62,23 @@ public final class Solution {
 		// write your code here to read the questions from the console
 		// tokenize the question line and create the question object
 		// add the question objects to the quiz class
+		int cnt = 0;
 		if (questionCount < 1) {
 			System.out.println("Quiz does not have questions");
 			return;
-		} else {
-			for (int i = 0; i < questionCount; i++) {
-				String q = s.nextLine();
-				String[] field = q.split(":");
-			}
-			System.out.println(questionCount + " " + "are added to the quiz");
 		}
+		for (int i = 0; i < questionCount; i++) {
+			String q = s.nextLine();
+			String[] field = q.split(":");
+			for (int j = 0; j < field.length; j++) {
+				cnt++;
+			}
+			if (cnt != 5) {
+				System.out.println("Error! Malformed question");
+				return;
+			}
+		}
+		System.out.println(questionCount + " " + "are added to the quiz");
 	}
 
 	/**
@@ -97,5 +104,39 @@ public final class Solution {
 	}
 }
 class Quiz {
-	
+	private String questiontext;
+	private String[] choices;
+	private String correctanswer;
+	private int marksawarded;
+	private int penalty;
+	String getquestiontext() {
+		return questiontext;
+	}
+	void setquestiontext(String q) {
+		questiontext = q;
+	}
+	String[] getchoices() {
+		return choices;
+	}
+	void setchoices(String[] c) {
+		choices = c;
+	}
+	String getcorrectanswer() {
+		return correctanswer;
+	}
+	void setcorrectanswer(String c) {
+		correctanswer = c;
+	}
+	int getmarksawarded() {
+		return marksawarded;
+	}
+	void setmarksawarded(int m) {
+		marksawarded = m;
+	}
+	int getpenalty() {
+		return penalty;
+	}
+	void setpenalty(int p) {
+		penalty = p;
+	}
 }
