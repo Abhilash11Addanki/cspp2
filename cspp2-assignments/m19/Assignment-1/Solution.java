@@ -72,6 +72,9 @@ public final class Solution {
 			String q = s.nextLine();
 			field = q.split(":");
 		}
+		if (field.length != 5) {
+			System.out.println("Error! Malformed question");
+		}
 		String[] choices = field[1].split(",");
 		if (choices.length < 2) {
 			System.out.println(field[0] + " " + "does not have enough answer choices");
