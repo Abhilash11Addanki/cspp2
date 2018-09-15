@@ -72,6 +72,11 @@ public final class Solution {
 			String q = s.nextLine();
 			field = q.split(":");
 		}
+		String[] choices = field[1].split(",");
+		if (choices.length < 2) {
+			System.out.println(field[0] + " " + "does not have enough answer choices");
+			return;
+		}
 		if (Integer.parseInt(field[3]) <= 0) {
 			System.out.println("Invalid max marks for" + " " + field[0]);
 			return;
