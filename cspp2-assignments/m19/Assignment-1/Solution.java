@@ -17,7 +17,9 @@ public final class Solution {
 	 * @param      args  The arguments
 	 */
 	public static void main(final String[] args) {
-		// instantiate this Quiz
+		/**
+		 * q of type Quiz class.
+		 */
 		Quiz q = new Quiz();
 		// code to read the test cases input file
 		Scanner s = new Scanner(System.in);
@@ -59,10 +61,10 @@ public final class Solution {
 	 * @param      quiz           The quiz object
 	 * @param      questionCount  The question count
 	 */
-	public static void loadQuestions(final Scanner s, Quiz quiz, final int questionCount) {
-		// write your code here to read the questions from the console
-		// tokenize the question line and create the question object
-		// add the question objects to the quiz class
+	public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+		/**
+		 * questions list.
+		 */
 		ArrayList<Quiz> questions = new ArrayList<Quiz>();
 		int cnt = 0;
 		String[] field = new String[questionCount];
@@ -94,7 +96,6 @@ public final class Solution {
 				System.out.println("Invalid penalty for" + " " + field[0]);
 				return;
 			}
-			quiz = new Quiz(field[0], choices, Integer.parseInt(field[2]), Integer.parseInt(field[3]), Integer.parseInt(field[4]));
 			questions.add(quiz);
 		}
 		System.out.println(questionCount + " " + "are added to the quiz");
@@ -111,16 +112,13 @@ public final class Solution {
 		// write your code here to display the quiz questions
 		// read the user responses from the console
 		// store the user respones in the quiz object
-		for (int i = 0; i < answerCount; i++) {
-			System.out.println(quiz.getquestiontext());
-		}
-	}
 
-	/**
-	 * Displays the score report
-	 *
-	 * @param      quiz     The quiz object
-	 */
+		/**
+		 * Displays the score report
+		 *
+		 * @param      quiz     The quiz object
+		 */
+	}
 	public static void displayScore(final Quiz quiz) {
 		// write your code here to display the score report
 	}
