@@ -70,6 +70,10 @@ public final class Solution {
 		for (int i = 0; i < questionCount; i++) {
 			String q = s.nextLine();
 			String[] field = q.split(":");
+			if (Integer.parseInt(field[3]) <= 0) {
+				System.out.println("Invalid max marks for" + " " + field[0]);
+				return;
+			}
 			for (int j = 0; j < field.length; j++) {
 				cnt++;
 			}
