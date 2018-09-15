@@ -87,7 +87,8 @@ public final class Solution {
                     + "does not have enough answer choices");
                 return;
             }
-            if (Integer.parseInt(field[2]) < 1 || Integer.parseInt(field[2]) > choices.length) {
+            if (Integer.parseInt(field[2]) < 1 ||
+                Integer.parseInt(field[2]) > choices.length) {
                 System.out.println("Error! Correct answer choice number is out of range for"
                     + " " + field[0]);
                 return;
