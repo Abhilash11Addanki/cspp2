@@ -121,7 +121,7 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
                                  final Quiz quiz, final int answerCount) {
-        quiz.displayquestiontext();
+        quiz.displaystartquiz();
     }
     /**
      * Displays the score report.
@@ -129,7 +129,7 @@ public final class Solution {
      * @param      quiz  The quiz
      */
     public static void displayScore(final Quiz quiz) {
-        // write your code here to display the score report
+        quiz.displayscorereport();
     }
 }
 /**
@@ -196,7 +196,7 @@ class Quiz {
     void setpenalty(final int p) {
         penalty.add(p);
     }
-    void displayquestiontext() {
+    void displaystartquiz() {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
@@ -206,6 +206,11 @@ class Quiz {
             System.out.println();
             System.out.println();
             i++;
+        }
+    }
+    void displayscorereport() {
+        for (String quiz : questiontext) {
+            System.out.println(quiz);
         }
     }
 }
