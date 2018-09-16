@@ -104,6 +104,9 @@ public final class Solution {
             }
             quiz.setquestiontext(field[0]);
             quiz.setmarksawarded(Integer.parseInt(field[3]));
+            for (int j = 0; j < choices.length; j++) {
+                quiz.setchoices(choices[j]);
+            }
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -196,6 +199,9 @@ class Quiz {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
+            for (int j = 0; j < choices.size(); j++) {
+                System.out.print(choices.get(j) + "         ");
+            }
             i++;
         }
     }
