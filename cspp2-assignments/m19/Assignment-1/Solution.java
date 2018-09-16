@@ -108,6 +108,7 @@ public final class Solution {
                 quiz.setchoices(choices[j]);
                 j++;
             }
+            quiz.setcorrectanswer(Integer.parseInt(field[2]));
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -121,7 +122,12 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
                                  final Quiz quiz, final int answerCount) {
-        quiz.displaystartquiz();
+        String[] choice = new String[2];
+        for (int i = 0; i < answerCount; i++) {
+            String q = s.nextLine();
+            choice = q.split(" ");
+            quiz.displaystartquiz(Integer.parseInt(choice[1]));
+        }
     }
     /**
      * Displays the score report.
@@ -196,7 +202,7 @@ class Quiz {
     void setpenalty(final int p) {
         penalty.add(p);
     }
-    void displaystartquiz() {
+    void displaystartquiz(int choice) {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
@@ -209,8 +215,10 @@ class Quiz {
         }
     }
     void displayscorereport() {
+        int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz);
+
         }
     }
 }
