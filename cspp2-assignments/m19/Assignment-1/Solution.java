@@ -193,10 +193,10 @@ class Quiz {
         penalty.add(p);
     }
     void displayquestiontext() {
+        int i = 0;
         for (String quiz : questiontext) {
-            for (int quiz1 : marksawarded) {
-                System.out.println(quiz + "(" + quiz1 + ")");
-            }
+            System.out.println(quiz + "(" + marksawarded.get(i) + ")");
+            i++;
         }
     }
 }
