@@ -122,11 +122,11 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
                                  final Quiz quiz, final int answerCount) {
+        quiz.displaystartquiz();
         String[] choice = new String[2];
         for (int i = 0; i < answerCount; i++) {
             String q = s.nextLine();
             choice = q.split(" ");
-            quiz.displaystartquiz(Integer.parseInt(choice[1]));
         }
     }
     /**
@@ -202,7 +202,7 @@ class Quiz {
     void setpenalty(final int p) {
         penalty.add(p);
     }
-    void displaystartquiz(int choice) {
+    void displaystartquiz() {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
