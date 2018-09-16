@@ -103,6 +103,7 @@ public final class Solution {
                 return;
             }
             quiz.setquestiontext(field[0]);
+            quiz.setmarksawarded(Integer.parseInt(field[3]));
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -193,7 +194,9 @@ class Quiz {
     }
     void displayquestiontext() {
         for (String quiz : questiontext) {
-            System.out.println(quiz);
+            for (int quiz1 : marksawarded) {
+                System.out.println(quiz + "(" + quiz1 + ")");
+            }
         }
     }
 }
