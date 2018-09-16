@@ -66,7 +66,7 @@ public final class Solution {
         /**
          * questions list.
          */
-        int cnt = 0;
+        int cnt = 0, j = 0;
         String[] field = new String[questionCount];
         if (questionCount < 1) {
             System.out.println("Quiz does not have questions");
@@ -104,7 +104,10 @@ public final class Solution {
             }
             quiz.setquestiontext(field[0]);
             quiz.setmarksawarded(Integer.parseInt(field[3]));
-            quiz.setchoices(choices[i]);
+            while (j < choices.length) {
+                quiz.setchoices(choices[j]);
+                j++;
+            }
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
