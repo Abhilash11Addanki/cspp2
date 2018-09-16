@@ -102,7 +102,7 @@ public final class Solution {
                 System.out.println("Invalid penalty for" + " " + field[0]);
                 return;
             }
-            quiz.setquestiontext(choices[0]);
+            quiz.setquestiontext(field[0]);
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -116,6 +116,7 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner s,
             final Quiz quiz, final int answerCount) {
+        quiz.displayquestiontext();
     }
     /**
      * Displays the score report.
@@ -189,6 +190,11 @@ class Quiz {
      */
     void setpenalty(final int p) {
         penalty.add(p);
+    }
+    void displayquestiontext() {
+        for (String quiz : questiontext) {
+            System.out.println(quiz);
+        }
     }
 }
 
