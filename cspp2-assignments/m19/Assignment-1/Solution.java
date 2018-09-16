@@ -193,10 +193,7 @@ class Quiz {
     }
     void displayquestiontext() {
         for (String quiz : questiontext) {
-            for (int quiz1 : marksawarded) {
-                System.out.println(quiz + "(" + quiz1 + ")");
-                break;
-            }
+            System.out.println(quiz);
         }
     }
 }
