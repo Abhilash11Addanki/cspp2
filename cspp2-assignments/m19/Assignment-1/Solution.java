@@ -240,6 +240,7 @@ class Quiz {
                 }
                 i++;
                 j++;
+                break;
             }
         }
     }
