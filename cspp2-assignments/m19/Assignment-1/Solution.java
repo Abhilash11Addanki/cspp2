@@ -230,19 +230,6 @@ class Quiz {
     void displayscorereport() {
         for (String quiz : questiontext) {
             System.out.println(quiz);
-            for (int i = 0; i < responses.size(); i++) {
-                for (int j = 0; j < correctanswer.size(); j++) {
-                    if (responses.get(i) == correctanswer.get(j)) {
-                        System.out.println("Correct Answer!");
-                        j++;
-                        break;
-                    } else {
-                        System.out.println("Wrong Answer!");
-                        j++;
-                        break;
-                    }
-                }
-            }
         }
     }
 }
