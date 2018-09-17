@@ -221,7 +221,7 @@ class Quiz {
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
             for (int j = 0; j < choices.size(); j++) {
-                System.out.print(choices.get(j) + "        ");
+                System.out.print(choices.get(j) + "\t");
             }
             System.out.println();
             System.out.println();
