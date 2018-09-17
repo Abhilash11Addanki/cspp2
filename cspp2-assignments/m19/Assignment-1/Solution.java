@@ -245,12 +245,11 @@ class Quiz {
                 System.out.println(quiz);
                 while (i < responses.size() && i < correctanswer.size()) {
                     if (responses.get(i).equals(correctanswer.get(i))) {
-                        System.out.println(" " +
-                            "Correct Answer! - Marks Awarded: " +
-                            marksawarded.get(i));
+                        System.out.println(" Correct Answer! - Marks Awarded: "
+                            + marksawarded.get(i));
                         sum += marksawarded.get(i);
                     } else {
-                        System.out.println(" " + "Wrong Answer! - Penalty: "
+                        System.out.println(" Wrong Answer! - Penalty: "
                             + penalty.get(i));
                         sum += penalty.get(i);
                     }
