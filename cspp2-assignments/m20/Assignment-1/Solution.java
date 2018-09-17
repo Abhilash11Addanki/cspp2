@@ -126,7 +126,7 @@ class Question {
 		for (int i = 0; i < choices.length; i++) {
 			s += choices[i] + "\t";
 		}
-		s += choices[choices.length - 1] + "\n";
+		s += "\n";
 		return s;
 	}
 }
