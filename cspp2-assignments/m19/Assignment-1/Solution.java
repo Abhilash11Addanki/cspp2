@@ -245,6 +245,7 @@ class Quiz {
             }
         }
         System.out.println("Total Score: " + sum);
+        System.out.println();
     }
 }
 
