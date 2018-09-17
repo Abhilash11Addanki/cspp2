@@ -89,7 +89,7 @@ public final class Solution {
             if (Integer.parseInt(field[2]) < 1
                     || Integer.parseInt(field[2]) > choices.length) {
                 System.out.println("Error! Correct answer choice number"
-                                   + " " + "is out of range for" + " " + field[0]);
+                    + " " + "is out of range for" + " " + field[0]);
                 return;
             }
             final int three = 3;
@@ -103,13 +103,13 @@ public final class Solution {
                 return;
             }
             quiz.setquestiontext(field[0]);
-            quiz.setmarksawarded(Integer.parseInt(field[3]));
+            quiz.setmarksawarded(Integer.parseInt(field[three]));
             while (j < choices.length) {
                 quiz.setchoices(choices[j]);
                 j++;
             }
             quiz.setcorrectanswer(choices[Integer.parseInt(field[2]) - 1]);
-            quiz.setpenalty(Integer.parseInt(field[4]));
+            quiz.setpenalty(Integer.parseInt(field[four]));
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -214,6 +214,9 @@ class Quiz {
     void setresponse(final String r) {
         responses.add(r);
     }
+    /**
+     * method for displaying start quiz.
+     */
     void displaystartquiz() {
         int i = 0;
         for (String quiz : questiontext) {
@@ -230,17 +233,23 @@ class Quiz {
             i++;
         }
     }
+    /**
+     * method for displaying score report.
+     */
     void displayscorereport() {
-        if (questiontext.size() != 0 && correctanswer.size() != 0 && penalty.size() != 0 && marksawarded.size() != 0 && choices.size() != 0) {
+        if (questiontext.size() != 0 && correctanswer.size() != 0
+            && penalty.size() != 0 && marksawarded.size() != 0 && choices.size() != 0) {
             int i = 0, sum = 0;
             for (String quiz : questiontext) {
                 System.out.println(quiz);
                 while (i < responses.size() && i < correctanswer.size()) {
                     if (responses.get(i).equals(correctanswer.get(i))) {
-                        System.out.println(" " + "Correct Answer! - Marks Awarded: " + marksawarded.get(i));
+                        System.out.println(" " + "Correct Answer! - Marks Awarded: "
+                            + marksawarded.get(i));
                         sum += marksawarded.get(i);
                     } else {
-                        System.out.println(" " + "Wrong Answer! - Penalty: " + penalty.get(i));
+                        System.out.println(" " + "Wrong Answer! - Penalty: " +
+                            penalty.get(i));
                         sum += penalty.get(i);
                     }
                     i++;
