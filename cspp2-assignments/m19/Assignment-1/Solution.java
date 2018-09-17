@@ -108,7 +108,7 @@ public final class Solution {
                 quiz.setchoices(choices[j]);
                 j++;
             }
-            quiz.setcorrectanswer(Integer.parseInt(field[2]));
+            quiz.setcorrectanswer(choices[Integer.parseInt(field[2]) - 1]);
             quiz.setpenalty(Integer.parseInt(field[4]));
         }
         System.out.println(questionCount + " " + "are added to the quiz");
@@ -124,11 +124,9 @@ public final class Solution {
     public static void startQuiz(final Scanner s,
                                  final Quiz quiz, final int answerCount) {
         quiz.displaystartquiz();
-        String[] choice = new String[2];
         for (int i = 0; i < answerCount; i++) {
             String q = s.nextLine();
-            choice = q.split(" ");
-            quiz.setresponse(Integer.parseInt(choice[1]));
+            quiz.setresponse(q);
         }
     }
     /**
@@ -155,7 +153,7 @@ class Quiz {
     /**
      * correctanswer.
      */
-    private ArrayList<Integer> correctanswer = new ArrayList<Integer>();
+    private ArrayList<String> correctanswer = new ArrayList<String>();
     /**
      * marksawarded.
      */
@@ -167,7 +165,7 @@ class Quiz {
     /**
      * responses.
      */
-    private ArrayList<Integer> responses = new ArrayList<Integer>();
+    private ArrayList<String> responses = new ArrayList<String>();
     /**
      * sets question text.
      *
@@ -189,7 +187,7 @@ class Quiz {
      *
      * @param      c     { parameter_description }
      */
-    void setcorrectanswer(final int c) {
+    void setcorrectanswer(final String c) {
         correctanswer.add(c);
     }
     /**
@@ -213,7 +211,7 @@ class Quiz {
      *
      * @param      r     { parameter_description }
      */
-    void setresponse(final int r) {
+    void setresponse(final String r) {
         responses.add(r);
     }
     void displaystartquiz() {
@@ -223,8 +221,7 @@ class Quiz {
             for (int j = 0; j < choices.size(); j++) {
                 if (j != 3) {
                     System.out.print(choices.get(j) + "\t");
-                }
-                else {
+                } else {
                     System.out.print(choices.get(j));
                 }
             }
@@ -239,7 +236,7 @@ class Quiz {
             for (String quiz : questiontext) {
                 System.out.println(quiz);
                 while (i < responses.size() && i < correctanswer.size()) {
-                    if (responses.get(i) == correctanswer.get(i)) {
+                    if (responses.get(i).equals(correctanswer.get(i))) {
                         System.out.println(" " + "Correct Answer! - Marks Awarded: " + marksawarded.get(i));
                         sum += marksawarded.get(i);
                     } else {
