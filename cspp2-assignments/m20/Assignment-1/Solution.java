@@ -211,6 +211,9 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+    /**
+     * flag for checking conditions.
+     */
     private static boolean flag = true;
     /**
      * main function to execute test cases.
@@ -282,14 +285,14 @@ public final class Solution {
             String[] choices = field[1].split(",");
             if (choices.length < 2) {
                 System.out.println(field[0] + " "
-                                   + "does not have enough answer choices");
+                + "does not have enough answer choices");
                 flag = false;
                 return;
             }
             if (Integer.parseInt(field[2]) < 1
                     || Integer.parseInt(field[2]) > choices.length) {
                 System.out.println("Error! Correct answer choice number"
-                                   + " " + "is out of range for" + " " + field[0]);
+                    + " " + "is out of range for" + " " + field[0]);
                 flag = false;
                 return;
             }
@@ -306,7 +309,8 @@ public final class Solution {
                 return;
             }
             quiz.addQuestion(new Question(field[0], choices,
-                                          Integer.parseInt(field[2]), Integer.parseInt(field[3]), Integer.parseInt(field[4])));
+            Integer.parseInt(field[2]), Integer.parseInt(field[3]),
+            Integer.parseInt(field[4])));
         }
         System.out.println(q + " " + "are added to the quiz");
     }
@@ -318,7 +322,7 @@ public final class Solution {
      * @param      q     The answer count
      */
     public static void startQuiz(final Scanner scan,
-                                 final Quiz quiz, final int q) {
+            final Quiz quiz, final int q) {
         if (flag == false) {
             return;
         }
@@ -335,7 +339,6 @@ public final class Solution {
      * @param      quiz     The quiz object
      */
     public static void displayScore(final Quiz quiz) {
-        // write your code here to display the score report using quiz object.
         if (flag == false) {
             return;
         }
