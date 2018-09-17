@@ -309,8 +309,8 @@ public final class Solution {
                 return;
             }
             quiz.addQuestion(new Question(field[0], choices,
-            Integer.parseInt(field[2]), Integer.parseInt(field[3]),
-            Integer.parseInt(field[4])));
+            Integer.parseInt(field[2]), Integer.parseInt(field[three]),
+            Integer.parseInt(field[four])));
         }
         System.out.println(q + " " + "are added to the quiz");
     }
@@ -323,7 +323,7 @@ public final class Solution {
      */
     public static void startQuiz(final Scanner scan,
             final Quiz quiz, final int q) {
-        if (flag == false) {
+        if (!flag) {
             return;
         }
         for (int i = 0; i < q; i++) {
@@ -339,9 +339,11 @@ public final class Solution {
      * @param      quiz     The quiz object
      */
     public static void displayScore(final Quiz quiz) {
-        if (flag == false) {
+        if (!flag) {
             return;
         }
         System.out.println(quiz.showReport());
     }
 }
+
+
