@@ -109,6 +109,7 @@ public final class Solution {
                 j++;
             }
             quiz.setcorrectanswer(Integer.parseInt(field[2]));
+            quiz.setpenalty(Integer.parseInt(field[4]));
         }
         System.out.println(questionCount + " " + "are added to the quiz");
     }
@@ -236,7 +237,8 @@ class Quiz {
                     System.out.println(" Correct Answer! - Marks Awarded: " + marksawarded.get(i));
                     sum += marksawarded.get(i);
                 } else {
-                    System.out.println(" Wrong Answer! - Penalty:");
+                    System.out.println(" Wrong Answer! - Penalty: " + penalty.get(i));
+                    sum += penalty.get(i);
                 }
                 i++; j++;
                 break;
