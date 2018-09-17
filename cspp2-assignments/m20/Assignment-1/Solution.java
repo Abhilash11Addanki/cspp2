@@ -275,6 +275,7 @@ public final class Solution {
 				System.out.println("Invalid penalty for" + " " + field[0]);
 				return;
 			}
+			quiz.addQuestion(quiz.getQuestion(i));
 		}
 		System.out.println(q + " " + "are added to the quiz");
 	}
@@ -287,9 +288,9 @@ public final class Solution {
 	 */
 	public static void startQuiz(final Scanner scan,
 	                             final Quiz quiz, final int q) {
-		// write your code here to display the quiz questions on the console.
-		// read the user responses from the console using scanner object.
-		// store the user respone in the question object
+		for (int i = 0; i < q; i++) {
+			System.out.println(quiz.getQuestion(i));
+		}
 	}
 	/**
 	 * Displays the score report.
