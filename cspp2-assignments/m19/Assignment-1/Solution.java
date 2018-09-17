@@ -220,7 +220,7 @@ class Quiz {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
-            System.out.println(choices.get(i));
+            System.out.print(choices.get(i) + "\t");
             System.out.println();
             i++;
         }
