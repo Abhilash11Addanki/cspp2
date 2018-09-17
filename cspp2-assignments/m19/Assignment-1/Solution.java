@@ -220,27 +220,24 @@ class Quiz {
         int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz + "(" + marksawarded.get(i) + ")");
-            for (int j = 0; j < choices.size(); j++) {
-                System.out.print(choices.get(j) + "\t");
-            }
-            System.out.println();
+            System.out.println(choices.get(i));
             System.out.println();
             i++;
         }
     }
     void displayscorereport() {
-        int i = 0, j = 0, sum = 0;
+        int i = 0, sum = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz);
-            while (i < responses.size() && j < correctanswer.size()) {
-                if (responses.get(i) == correctanswer.get(j)) {
+            while (i < responses.size() && i < correctanswer.size()) {
+                if (responses.get(i) == correctanswer.get(i)) {
                     System.out.println(" " + "Correct Answer! - Marks Awarded: " + marksawarded.get(i));
                     sum += marksawarded.get(i);
                 } else {
                     System.out.println(" " + "Wrong Answer! - Penalty: " + penalty.get(i));
                     sum += penalty.get(i);
                 }
-                i++; j++;
+                i++;
                 break;
             }
         }
