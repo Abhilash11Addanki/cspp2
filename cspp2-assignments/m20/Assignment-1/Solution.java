@@ -124,7 +124,11 @@ class Question {
 	public String toString() {
 		String s = getQuestionText() + "(" + getMaxMarks() + ")" + "\n";
 		for (int i = 0; i < choices.length; i++) {
-			s += choices[i] + "\t";
+			if (i != choices.length - 1) {
+				s += choices[i] + "\t";
+			} else {
+				s += choices[i];
+			}
 		}
 		s += "\n";
 		return s;
