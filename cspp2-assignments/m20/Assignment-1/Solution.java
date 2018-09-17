@@ -289,7 +289,8 @@ public final class Solution {
 	public static void startQuiz(final Scanner scan,
 	                             final Quiz quiz, final int q) {
 		for (int i = 0; i < q; i++) {
-			System.out.println(quiz.getQuestion(i).toString());
+			Question ques = quiz.getQuestion(i);
+			System.out.println(ques);
 		}
 	}
 	/**
