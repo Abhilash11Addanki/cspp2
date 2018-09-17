@@ -187,11 +187,11 @@ class Quiz {
 			str += questions[i].getQuestionText() + "\n";
 			if (questions[i].evaluateResponse(questions[i].getResponse())) {
 				str += " Correct Answer! - Marks Awarded: "
-				     + questions[i].getMaxMarks() + "\n";
+				       + questions[i].getMaxMarks() + "\n";
 				sum += questions[i].getMaxMarks();
 			} else {
 				str += " Wrong Answer! - Penalty: "
-				     + questions[i].getPenalty() + "\n";
+				       + questions[i].getPenalty() + "\n";
 				sum += questions[i].getPenalty();
 			}
 		}
@@ -210,6 +210,7 @@ public final class Solution {
 	private Solution() {
 		// leave this blank
 	}
+	private static boolean flag = true;
 	/**
 	 * main function to execute test cases.
 	 *
@@ -265,6 +266,7 @@ public final class Solution {
 		String[] field = new String[q];
 		if (q < 1) {
 			System.out.println("Quiz does not have questions");
+			flag = false;
 			return;
 		}
 		for (int i = 0; i < q; i++) {
@@ -273,28 +275,33 @@ public final class Solution {
 			field = s.split(":");
 			if (field.length != five || field[0].equals("")) {
 				System.out.println("Error! Malformed question");
+				flag = false;
 				return;
 			}
 			String[] choices = field[1].split(",");
 			if (choices.length < 2) {
 				System.out.println(field[0] + " "
 				                   + "does not have enough answer choices");
+				flag = false;
 				return;
 			}
 			if (Integer.parseInt(field[2]) < 1
 			        || Integer.parseInt(field[2]) > choices.length) {
 				System.out.println("Error! Correct answer choice number"
 				                   + " " + "is out of range for" + " " + field[0]);
+				flag = false;
 				return;
 			}
 			final int three = 3;
 			if (Integer.parseInt(field[three]) <= 0) {
 				System.out.println("Invalid max marks for" + " " + field[0]);
+				flag = false;
 				return;
 			}
 			final int four = 4;
 			if (Integer.parseInt(field[four]) > 0) {
 				System.out.println("Invalid penalty for" + " " + field[0]);
+				flag = false;
 				return;
 			}
 			quiz.addQuestion(new Question(field[0], choices,
@@ -311,6 +318,9 @@ public final class Solution {
 	 */
 	public static void startQuiz(final Scanner scan,
 	                             final Quiz quiz, final int q) {
+		if (flag == false) {
+			return;
+		}
 		for (int i = 0; i < q; i++) {
 			Question que = quiz.getQuestion(i);
 			System.out.println(que);
