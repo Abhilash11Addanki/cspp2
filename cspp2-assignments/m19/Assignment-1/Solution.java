@@ -228,8 +228,19 @@ class Quiz {
         }
     }
     void displayscorereport() {
+        int i = 0, j = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz);
+            while (i < responses.size() && j < correctanswer.size()) {
+                if (responses.get(i) == correctanswer.get(j)) {
+                    System.out.println("Correct Answer!");
+                }
+                else {
+                    System.out.println("Wrong Answer!");
+                }
+                i++;
+                j++;
+            }
         }
     }
 }
