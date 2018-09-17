@@ -228,20 +228,21 @@ class Quiz {
         }
     }
     void displayscorereport() {
-        int i = 0, j = 0;
+        int i = 0, j = 0, sum = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz);
             while (i < responses.size() && j < correctanswer.size()) {
                 if (responses.get(i) == correctanswer.get(j)) {
-                    System.out.println("Correct Answer! - Marks Awarded:" + marksawarded.get(i));
-                }
-                else {
-                    System.out.println("Wrong Answer!");
+                    System.out.println(" Correct Answer! - Marks Awarded: " + marksawarded.get(i));
+                    sum += marksawarded.get(i);
+                } else {
+                    System.out.println(" Wrong Answer! - Penalty:");
                 }
                 i++; j++;
                 break;
             }
         }
+        System.out.println("Total Score: " + sum);
     }
 }
 
