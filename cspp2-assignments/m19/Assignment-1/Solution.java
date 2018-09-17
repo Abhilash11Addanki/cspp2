@@ -127,6 +127,7 @@ public final class Solution {
         for (int i = 0; i < answerCount; i++) {
             String q = s.nextLine();
             choice = q.split(" ");
+            quiz.setresponse(Integer.parseInt(choice[1]));
         }
     }
     /**
@@ -162,6 +163,10 @@ class Quiz {
      * penalty.
      */
     private ArrayList<Integer> penalty = new ArrayList<Integer>();
+    /**
+     * responses.
+     */
+    private ArrayList<Integer> responses = new ArrayList<Integer>();
     /**
      * sets question text.
      *
@@ -202,6 +207,14 @@ class Quiz {
     void setpenalty(final int p) {
         penalty.add(p);
     }
+    /**
+     * sets response.
+     *
+     * @param      r     { parameter_description }
+     */
+    void setresponse(final int r) {
+        responses.add(r);
+    }
     void displaystartquiz() {
         int i = 0;
         for (String quiz : questiontext) {
@@ -215,10 +228,21 @@ class Quiz {
         }
     }
     void displayscorereport() {
-        int i = 0;
         for (String quiz : questiontext) {
             System.out.println(quiz);
-
+            for (int i = 0; i < responses.size(); i++) {
+                for (int j = 0; j < correctanswer.size(); j++) {
+                    if (responses.get(i) == correctanswer.get(j)) {
+                        System.out.println("Correct Answer!");
+                        j++;
+                        break;
+                    } else {
+                        System.out.println("Wrong Answer!");
+                        j++;
+                        break;
+                    }
+                }
+            }
         }
     }
 }
