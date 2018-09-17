@@ -290,7 +290,7 @@ public final class Solution {
 	                             final Quiz quiz, final int q) {
 		for (int i = 0; i < q; i++) {
 			Question ques = quiz.getQuestion(i);
-			System.out.println(ques);
+			System.out.println(ques.toString());
 		}
 	}
 	/**
