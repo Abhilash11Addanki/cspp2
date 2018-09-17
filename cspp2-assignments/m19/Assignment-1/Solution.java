@@ -224,7 +224,6 @@ class Quiz {
                 System.out.print(choices.get(j) + "\t");
             }
             System.out.println();
-            System.out.println();
             i++;
         }
     }
