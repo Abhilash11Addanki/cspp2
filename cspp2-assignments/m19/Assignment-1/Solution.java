@@ -233,13 +233,12 @@ class Quiz {
             System.out.println(quiz);
             while (i < responses.size() && j < correctanswer.size()) {
                 if (responses.get(i) == correctanswer.get(j)) {
-                    System.out.println("Correct Answer!");
+                    System.out.println("Correct Answer! - Marks Awarded:" + marksawarded.get(i));
                 }
                 else {
                     System.out.println("Wrong Answer!");
                 }
-                i++;
-                j++;
+                i++; j++;
                 break;
             }
         }
