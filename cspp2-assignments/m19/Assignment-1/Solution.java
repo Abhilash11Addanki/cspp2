@@ -89,7 +89,7 @@ public final class Solution {
             if (Integer.parseInt(field[2]) < 1
                     || Integer.parseInt(field[2]) > choices.length) {
                 System.out.println("Error! Correct answer choice number"
-                    + " " + "is out of range for" + " " + field[0]);
+                                   + " " + "is out of range for" + " " + field[0]);
                 return;
             }
             final int three = 3;
@@ -238,19 +238,19 @@ class Quiz {
      */
     void displayscorereport() {
         if (questiontext.size() != 0 && correctanswer.size() != 0
-            && penalty.size() != 0 && marksawarded.size() != 0
-            && choices.size() != 0) {
+                && penalty.size() != 0 && marksawarded.size() != 0
+                && choices.size() != 0) {
             int i = 0, sum = 0;
             for (String quiz : questiontext) {
                 System.out.println(quiz);
                 while (i < responses.size() && i < correctanswer.size()) {
                     if (responses.get(i).equals(correctanswer.get(i))) {
                         System.out.println(" Correct Answer! - Marks Awarded: "
-                            + marksawarded.get(i));
+                                           + marksawarded.get(i));
                         sum += marksawarded.get(i);
                     } else {
                         System.out.println(" Wrong Answer! - Penalty: "
-                            + penalty.get(i));
+                                           + penalty.get(i));
                         sum += penalty.get(i);
                     }
                     i++;
