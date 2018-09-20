@@ -80,6 +80,7 @@ class Solution {
                     String[] s2 = j.split(" ");
                     BagOfWords bag = new BagOfWords(s1, s2);
                     double result = bag.computeFreq();
+                    System.out.print(inp);
                     System.out.print(Math.round(result * 100));
                     System.out.print(" " + "\t");
                 }
