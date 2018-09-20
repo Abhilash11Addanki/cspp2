@@ -2,9 +2,7 @@ import java.util.*;
 import java.io.*;
 import java.nio.file.*;
 class BagOfWords {
-	String[] doc1;
-	String[] doc2;
-	String[] combined;
+	String[] doc1, doc2, combined;
 	BagOfWords(String[] d1, String[] d2) {
 		doc1 = d1;
 		doc2 = d2;
@@ -20,7 +18,7 @@ class BagOfWords {
 	int count(String[] doc, String word) {
 		int count = 0;
 		for (String i : doc) {
-			if (i.equalsIgnoreCase(word)) {
+			if (i.equals(word)) {
 				count++;
 			}
 		}
@@ -71,7 +69,7 @@ class Solution {
 			int i = 0;
 			try {
 				for (File f : filelist) {
-					docs[i++] = new String(Files.readAllBytes(Paths.get(f.toString())));
+					docs[i++] = new String(Files.readAllBytes(Paths.get(f.toString()))).toLowerCase();
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
