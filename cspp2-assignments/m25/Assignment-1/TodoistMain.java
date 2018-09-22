@@ -215,11 +215,11 @@ class Todoist {
 	public Task getNextTask(final String name) {
 		for (Task task : array) {
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == false) {
+			        && task.getimportant() == true && task.geturgent() == true) {
 				return task;
 			}
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == true) {
+			        && task.getimportant() == true && task.geturgent() == false) {
 				return task;
 			}
 		}
