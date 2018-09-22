@@ -134,11 +134,11 @@ class Task {
 			throw new InvalidTitle("Title not provided");
 		}
 		if (timeToComplete < 0) {
-			throw new InvalidTime("Invalid timeToComplete"
+			throw new InvalidTime("Invalid timeToComplete "
 			                      + Integer.toString(timeToComplete));
 		}
 		if (!(status.equals("todo") || status.equals("done"))) {
-			throw new InvalidStatus("Invalid status" + status);
+			throw new InvalidStatus("Invalid status " + status);
 		}
 	}
 	String getTitle() {
