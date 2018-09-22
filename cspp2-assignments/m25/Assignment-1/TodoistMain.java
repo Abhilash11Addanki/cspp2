@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
   * write your code below this comment
@@ -190,16 +191,12 @@ class Task {
 	}
 }
 class Todoist {
-	private Task[] array;
-	private int size;
+	private ArrayList<Task> array;
 	Todoist() {
-		array = new Task[size];
+		array = new ArrayList<Task>();
 	}
 	public void addTask(final Task item) {
-		if (size == array.length) {
-			array = resize();
-		}
-		array[size++] = item;
+		array.add(item);
 	}
 	public String toString() {
 		String s = "";
@@ -207,11 +204,6 @@ class Todoist {
 			s += t.toString() + "\n";
 		}
 		return s;
-	}
-	public Task[] resize() {
-		int n = 2 * size;
-		Task[] newarr = Arrays.copyOf(array, n);
-		return newarr;
 	}
 	public Task getNextTask(final String name) {
 		for (Task task : array) {
@@ -252,9 +244,9 @@ class Todoist {
 	}
 	public int totalTime4Completion() {
 		int total = 0;
-		for (int i = 0; i < size; i++) {
-			if (array[i].getstatus().equals("todo")) {
-				total += array[i].getTime();
+		for (Task task : array) {
+			if (task.getstatus().equals("todo")) {
+				total += task.getTime();
 			}
 		}
 		return total;
