@@ -159,7 +159,7 @@ class Task {
 		status = s;
 	}
 	public String toString() {
-		return title + ", " + assignedTo + ", " + timeToComplete + ", " + important + ", " + urgent + ", " + status;
+		return getTitle() + ", " + getassignedTo() + ", " + Integer.toString(getTime()) + ", " + getimportant() + ", " + geturgent() + ", " + getstatus();
 	}
 }
 class Todoist {
