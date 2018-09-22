@@ -98,7 +98,27 @@ public class TodoistMain {
 	 * @param      args  The command line arguments
 	 */
 	public static void main(final String[] args) {
-		startTest();
+		try{
+			startTest();
+		}
+		catch(Exception e) {
+			e.getMessage();
+		}
+	}
+}
+class InvalidTitle extends Exception {
+	InvalidTitle(String s) {
+		super(s);
+	}
+}
+class InvalidTime extends Exception {
+	InvalidTime(String s) {
+		super(s);
+	}
+}
+class InvalidStatus extends Exception {
+	InvalidStatus(String s) {
+		super(s);
 	}
 }
 class Task {
@@ -108,13 +128,23 @@ class Task {
 	private boolean important;
 	private boolean urgent;
 	private String status;
-	Task(String t, String a, int time, boolean i, boolean u, String s) {
+	Task(String t, String a, int time, boolean i, boolean u, String s) throws Exception {
 		title = t;
 		assignedTo = a;
 		timeToComplete = time;
 		important = i;
 		urgent = u;
 		status = s;
+		if (title.equals(null)) {
+			throw new InvalidTitle("Title not provided");
+		}
+		if (timeToComplete < 0) {
+			throw new InvalidTime("Invalid timeToComplete"
+			                      + Integer.toString(timeToComplete));
+		}
+		if (!status.equals("todo") || !status.equals("done")) {
+			throw new InvalidStatus("Invalid status" + status);
+		}
 	}
 	String getTitle() {
 		return title;
@@ -199,9 +229,8 @@ class Todoist {
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
 			        && task.getimportant().equals("Important") && task.geturgent().equals("Not Urgent")) {
 				arr = addTask(task);
-			}
-			else if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
+			} else if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
+			           && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
 				arr = addTask(task);
 			}
 		}
