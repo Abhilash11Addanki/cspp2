@@ -98,12 +98,7 @@ public class TodoistMain {
 	 * @param      args  The command line arguments
 	 */
 	public static void main(final String[] args) {
-		try{
-			startTest();
-		}
-		catch(Exception e) {
-			e.getMessage();
-		}
+		startTest();
 	}
 }
 class InvalidTitle extends Exception {
