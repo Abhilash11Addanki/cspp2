@@ -204,12 +204,10 @@ class Todoist {
 	}
 	public String toString() {
 		String s = "";
-		for (Task t : array) {
-			s =  t.getTitle() + ", " + t.getassignedTo() + ", "
-			     + Integer.toString(t.getTime()) + ", " + t.getimportant()
-			     + ", " + t.geturgent() + ", " + t.getstatus();
-		}
-		return s;
+        for (Task t : array) {
+            s += t.toString() + "\n";
+        }
+        return s;
 	}
 	public Task[] resize() {
 		int n = 2 * size;
