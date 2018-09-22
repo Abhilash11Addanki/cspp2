@@ -134,14 +134,20 @@ class Task {
 	void setTime(int time) {
 		timeToComplete = time;
 	}
-	boolean getimportant() {
-		return important;
+	String getimportant() {
+		if (important) {
+			return "Important";
+		}
+		return "Not Important";
 	}
 	void setimportant(boolean imp) {
 		important = imp;
 	}
-	boolean geturgent() {
-		return urgent;
+	String geturgent() {
+		if (urgent) {
+			return "Urgent";
+		}
+		return "Not Urgent";
 	}
 	void seturgent(boolean u) {
 		urgent = u;
@@ -153,7 +159,7 @@ class Task {
 		status = s;
 	}
 	public String toString() {
-		return title + " " + assignedTo + " " + timeToComplete + " " + important + " " + urgent + " " + status;
+		return title + ", " + assignedTo + ", " + timeToComplete + ", " + important + ", " + urgent + ", " + status;
 	}
 }
 class Todoist {
@@ -177,11 +183,11 @@ class Todoist {
 	public Task getNextTask(final String name) {
 		for (Task task : array) {
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == false) {
+			        && task.getimportant().equals("Important") && task.geturgent().equals("Not Urgent")) {
 				return task;
 			}
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == true) {
+			        && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
 				return task;
 			}
 		}
@@ -191,11 +197,11 @@ class Todoist {
 		Task[] arr = new Task[count];
 		for (Task task : array) {
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == false) {
+			        && task.getimportant().equals("Important") && task.geturgent().equals("Not Urgent")) {
 				arr = addTask(task);
 			}
 			else if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant() == true && task.geturgent() == true) {
+			        && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
 				arr = addTask(task);
 			}
 		}
