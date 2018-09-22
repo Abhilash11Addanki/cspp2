@@ -130,7 +130,7 @@ class Task {
 		important = i;
 		urgent = u;
 		status = s;
-		if (title.equals(null)) {
+		if (title.equals("")) {
 			throw new InvalidTitle("Title not provided");
 		}
 		if (timeToComplete < 0) {
