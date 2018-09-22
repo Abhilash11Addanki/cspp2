@@ -184,7 +184,9 @@ class Task {
 		status = s;
 	}
 	public String toString() {
-		return getTitle() + ", " + getassignedTo() + ", " + Integer.toString(getTime()) + ", " + getimportant() + ", " + geturgent() + ", " + getstatus();
+		return getTitle() + ", " + getassignedTo() + ", "
+		       + Integer.toString(getTime()) + ", " + getimportant()
+		       + ", " + geturgent() + ", " + getstatus();
 	}
 }
 class Todoist {
@@ -199,6 +201,15 @@ class Todoist {
 		}
 		array[size++] = item;
 		return array;
+	}
+	public String toString() {
+		String s = "";
+		for (Task t : array) {
+			s =  t.getTitle() + ", " + t.getassignedTo() + ", "
+			     + Integer.toString(t.getTime()) + ", " + t.getimportant()
+			     + ", " + t.geturgent() + ", " + t.getstatus();
+		}
+		return s;
 	}
 	public Task[] resize() {
 		int n = 2 * size;
