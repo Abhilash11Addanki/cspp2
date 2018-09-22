@@ -195,19 +195,18 @@ class Todoist {
 	Todoist() {
 		array = new Task[size];
 	}
-	public Task[] addTask(final Task item) {
+	public void addTask(final Task item) {
 		if (size == array.length) {
 			array = resize();
 		}
 		array[size++] = item;
-		return array;
 	}
 	public String toString() {
 		String s = "";
-        for (Task t : array) {
-            s += t.toString() + "\n";
-        }
-        return s;
+		for (Task t : array) {
+			s += t.toString() + "\n";
+		}
+		return s;
 	}
 	public Task[] resize() {
 		int n = 2 * size;
@@ -229,13 +228,24 @@ class Todoist {
 	}
 	public Task[] getNextTask(final String name, final int count) {
 		Task[] arr = new Task[count];
-		for (Task task : array) {
-			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant().equals("Important") && task.geturgent().equals("Not Urgent")) {
-				arr = addTask(task);
-			} else if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			           && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
-				arr = addTask(task);
+		int i = 0;
+		for (Task t : array) {
+			if (t.getassignedTo().equals(name)
+			        && t.getimportant().equals("Important")
+			        && t.geturgent().equals("Not Urgent")
+			        && t.getstatus().equals("todo")) {
+				arr[i++] = t;
+				if (i == count) {
+					break;
+				}
+			} else if (t.getassignedTo().equals(name)
+			           && t.getimportant().equals("Important")
+			           && t.geturgent().equals("Urgent")
+			           && t.getstatus().equals("todo")) {
+				arr[i++] = t;
+				if (i == count) {
+					break;
+				}
 			}
 		}
 		return arr;
