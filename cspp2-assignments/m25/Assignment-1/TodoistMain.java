@@ -222,7 +222,7 @@ class Todoist {
 			        && task.getstatus().equals("todo")) {
 				return task;
 			}
-			if (task.getassignedTo().equals(name)
+			else if (task.getassignedTo().equals(name)
 			        && task.getimportant() == true
 			        && task.geturgent() == true
 			        && task.getstatus().equals("todo")) {
