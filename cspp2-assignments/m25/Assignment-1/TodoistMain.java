@@ -137,7 +137,7 @@ class Task {
 			throw new InvalidTime("Invalid timeToComplete"
 			                      + Integer.toString(timeToComplete));
 		}
-		if (!status.equals("todo") || !status.equals("done")) {
+		if (!(status.equals("todo") || status.equals("done"))) {
 			throw new InvalidStatus("Invalid status" + status);
 		}
 	}
