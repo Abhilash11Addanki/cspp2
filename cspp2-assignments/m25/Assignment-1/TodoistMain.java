@@ -160,20 +160,14 @@ class Task {
 	void setTime(int time) {
 		timeToComplete = time;
 	}
-	String getimportant() {
-		if (important) {
-			return "Important";
-		}
-		return "Not Important";
+	boolean getimportant() {
+		return important;
 	}
 	void setimportant(boolean imp) {
 		important = imp;
 	}
-	String geturgent() {
-		if (urgent) {
-			return "Urgent";
-		}
-		return "Not Urgent";
+	boolean geturgent() {
+		return urgent;
 	}
 	void seturgent(boolean u) {
 		urgent = u;
@@ -185,6 +179,19 @@ class Task {
 		status = s;
 	}
 	public String toString() {
+		String imp;
+		if (important) {
+			imp = "Important";
+		} else {
+			imp = "Not Important";
+		}
+
+		String urg;
+		if (urgent) {
+			urg = "Urgent";
+		} else {
+			urg = "Not Urgent";
+		}
 		return getTitle() + ", " + getassignedTo() + ", "
 		       + Integer.toString(getTime()) + ", " + getimportant()
 		       + ", " + geturgent() + ", " + getstatus();
@@ -208,11 +215,11 @@ class Todoist {
 	public Task getNextTask(final String name) {
 		for (Task task : array) {
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant().equals("Important") && task.geturgent().equals("Not Urgent")) {
+			        && task.getimportant() == true && task.geturgent() == false) {
 				return task;
 			}
 			if (task.getassignedTo().equals(name) && task.getstatus().equals("todo")
-			        && task.getimportant().equals("Important") && task.geturgent().equals("Urgent")) {
+			        && task.getimportant() == true && task.geturgent() == true) {
 				return task;
 			}
 		}
@@ -223,16 +230,16 @@ class Todoist {
 		int i = 0;
 		for (Task t : array) {
 			if (t.getassignedTo().equals(name)
-			        && t.getimportant().equals("Important")
-			        && t.geturgent().equals("Not Urgent")
+			        && t.getimportant() == true
+			        && t.geturgent() == false
 			        && t.getstatus().equals("todo")) {
 				arr[i++] = t;
 				if (i == count) {
 					break;
 				}
 			} else if (t.getassignedTo().equals(name)
-			           && t.getimportant().equals("Important")
-			           && t.geturgent().equals("Urgent")
+			           && t.getimportant() == true
+			           && t.geturgent() == true
 			           && t.getstatus().equals("todo")) {
 				arr[i++] = t;
 				if (i == count) {
