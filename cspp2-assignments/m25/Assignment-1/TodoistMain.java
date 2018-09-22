@@ -192,9 +192,9 @@ class Task {
 		} else {
 			urg = "Not Urgent";
 		}
-		return getTitle() + ", " + getassignedTo() + ", "
-		       + Integer.toString(getTime()) + ", " + getimportant()
-		       + ", " + geturgent() + ", " + getstatus();
+		return title + ", " + assignedTo + ", "
+		       + Integer.toString(timeToComplete) + ", " + important
+		       + ", " + urgent + ", " + status;
 	}
 }
 class Todoist {
