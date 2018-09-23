@@ -69,21 +69,13 @@ class Solution{
             }
         }
         for (int i = 0; i < filesList.length - 1; i++) {
-            if (i == 0) {
-                System.out.print("\t     " + filesList[i].getName());
-            } else {
-                System.out.print("    " + filesList[i].getName());
-            }
+            System.out.print("\t     " + filesList[i].getName());
         }
         System.out.println("    " + filesList[length - 1].getName());
         for (int i = 0; i < length; i++) {
             System.out.print(filesList[i].getName() + "\t ");
             for (int j = 0; j < length; j++) {
-                if (matrix[i][j] == 100.0) {
-                    System.out.print(matrix[i][j] + "        ");
-                } else {
-                    System.out.print(matrix[i][j] + "         ");
-                }
+                System.out.print(matrix[i][j] + "        ");
             }
             System.out.println();
         }
