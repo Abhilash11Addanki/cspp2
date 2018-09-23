@@ -1,92 +1,155 @@
-import java.util.*;
-import java.io.*;
-import java.nio.file.*;
-class BagOfWords {
-    String[] doc1, doc2, combined;
-    BagOfWords(String[] d1, String[] d2) {
-        doc1 = d1;
-        doc2 = d2;
-        combined = new String[doc1.length + doc2.length];
-        int size = 0;
-        for (String i : doc1) {
-            combined[size++] = i;
-        }
-        for (String i : doc2) {
-            combined[size++] = i;
-        }
+import java.util.Scanner;
+import java.io.FileReader;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+/**this class is to maintain.
+*complete details of two files.
+*/
+class Data {
+    /** this is an empty constructor.
+    */
+    Data() {
     }
-    int freqcount(String[] doc, String word) {
-        int count = 0;
-        for (String i : doc) {
-            if (i.equals(word)) {
-                count++;
+    /**this method is to convert the.
+    *file document text to string
+    *@param file File
+    *@return str returns string of that text.
+    */
+    public static String toText(final File file) {
+        String str = "";
+        try {
+            Scanner input = new Scanner(new FileReader(file));
+            StringBuilder text = new StringBuilder();
+            while (input.hasNext()) {
+                text.append(input.next());
+                text.append(" ");
+            }
+            input.close();
+            str = text.toString();
+        } catch (FileNotFoundException e) {
+            System.out.println("No file");
+        }
+        return str;
+    }
+    /**
+     * to remove the unwanted characters.
+     *
+     * @param      text  The text
+     *
+     * @return map which contains
+     * frequency of words.
+     */
+    public Map remove(final String text) {
+        text.toLowerCase();
+        text.replaceAll("[0-9_]", "");
+        String[] words = text.split(" ");
+        Map<String, Integer> map = new HashMap<>();
+        for (String element : words) {
+         if (element.length() > 0) {
+            if (!(map.containsKey(element))) {
+                map.put(element, 1);
+            } else {
+                map.put(element, map.get(element) + 1);
             }
         }
-        return count;
     }
-    HashMap<String, Integer> checkfreq(String[] doc1, String[] doc2) {
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        for (String i : doc2) {
-            int c = freqcount(doc1, i);
-            if (!map.containsKey(i)) {
-                map.put(i, c);
-            }
-        }
         return map;
     }
-    double euclidean(HashMap<String, Integer> map) {
-        double e = 0;
-        for (int i : map.values()) {
-            e += Math.pow(i, 2);
+    /**this method is to give the.
+     *document distance.
+     *@param textOne first file string
+     *@param textTwo second file string
+     *@return document distance
+     */
+
+    public int similarity(final String textOne, final String textTwo) {
+        double numerator = 0;
+        double denominator = 1;
+        double sumOne = 0;
+        double sumTwo = 0;
+        final int hundred = 100;
+        Map<String, Integer> mapOne = remove(textOne);
+        Map<String, Integer> mapTwo = remove(textTwo);
+        for (String element: mapOne.keySet()) {
+            for (String item: mapTwo.keySet()) {
+                if (element.equals(item)) {
+                    numerator += mapOne.get(element) * mapTwo.get(item);
+                }
+            }
         }
-        return Math.sqrt(e);
-    }
-    double dotProduct(HashMap<String, Integer> map1, HashMap<String, Integer> map2) {
-        double result = 0;
-        for (String key : map1.keySet()) {
-            result += map1.get(key) * map2.get(key);
+
+        for (String word: mapOne.keySet()) {
+            sumOne += mapOne.get(word) * mapOne.get(word);
         }
-        return result;
-    }
-    double computeFreq() {
-        HashMap<String, Integer> s1 = checkfreq(doc1, combined);
-        HashMap<String, Integer> s2 = checkfreq(doc2, combined);
-        return dotProduct(s1, s2) / (euclidean(s1) * euclidean(s2));
+        for (String word: mapTwo.keySet()) {
+            sumTwo += mapTwo.get(word) * mapTwo.get(word);
+        }
+        denominator = Math.sqrt(sumOne) * Math.sqrt(sumTwo);
+        double documentDistance = (
+            (numerator / denominator) * hundred);
+        return (int) (documentDistance);
     }
 }
-class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        while (sc.hasNext()) {
-            String text = sc.next();
-            File file = new File(text);
-            File[] filelist = file.listFiles();
-            if (filelist.length == 0) {
-                System.out.println("empty directory");
-                return;
-            }
-            String[] docs = new String[filelist.length];
-            int i = 0;
-            try {
-                for (File f : filelist) {
-                    docs[i++] = new String(Files.readAllBytes(Paths.get(f.toString()))).toLowerCase();
+/** this is the solution class.
+*/
+public final class Solution {
+    /** an empty constructor.
+    */
+    private Solution() {
+
+    }
+    /**
+     * this is main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        try  {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        File files = new File(input);
+        Data obj = new Data();
+        File[] fileList = files.listFiles();
+        int length = fileList.length;
+        int maxValue = 0;
+        final int hundred = 100;
+        String result = "";
+        int[][] fileMatrix = new int[length][length];
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (i == j) {
+                    fileMatrix[i][j] = hundred;
+                } else {
+                    fileMatrix[i][j] = obj.similarity(
+                        obj.toText(fileList[i]), obj.toText(fileList[j]));
+                    if (maxValue < fileMatrix[i][j]) {
+                        maxValue = fileMatrix[i][j];
+                        result = "Maximum similarity is between "
+                        + fileList[i].getName() + " and "
+                        + fileList[j].getName();
+                    }
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-            for (String inp : docs) {
-                String[] s1 = inp.split(" ");
-                for (String j : docs) {
-                    String[] s2 = j.split(" ");
-                    BagOfWords bag = new BagOfWords(s1, s2);
-                    double result = bag.computeFreq();
-                    System.out.print(Math.round(result * 100));
-                    System.out.print(" " + "\t");
-                }
-                System.out.println();
-            }
-            return;
         }
+        System.out.print("      \t");
+        for (int i = 0; i < length - 1; i++) {
+            System.out.print("\t" + fileList[i].getName());
+        }
+        System.out.println("\t" + fileList[length - 1].getName());
+        for (int i = 0; i < length; i++) {
+            System.out.print(fileList[i].getName() + "\t");
+            for (int j = 0; j < length; j++) {
+                    System.out.print(fileMatrix[i][j] + "\t\t");
+            }
+            System.out.println();
+        }
+     System.out.println(result);
+    } catch (NoSuchElementException e) {
         System.out.println("empty directory");
     }
+    }
 }
+
