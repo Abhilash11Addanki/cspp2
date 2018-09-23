@@ -71,7 +71,7 @@ class Solution{
         for (int i = 0; i < filesList.length - 1; i++) {
             System.out.print("\t     " + filesList[i].getName());
         }
-        System.out.println("\t" + filesList[length - 1].getName());
+        System.out.println("" + filesList[length - 1].getName());
         for (int i = 0; i < length; i++) {
             System.out.print(filesList[i].getName() + "\t ");
             for (int j = 0; j < length; j++) {
