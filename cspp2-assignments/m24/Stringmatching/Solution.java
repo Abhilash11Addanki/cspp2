@@ -69,7 +69,11 @@ class Solution{
             }
         }
         for (int i = 0; i < filesList.length - 1; i++) {
-            System.out.print("\t     " + filesList[i].getName());
+            if (i == 0) {
+                System.out.print("\t     " + filesList[i].getName());
+            } else {
+                System.out.print("    " + filesList[i].getName());
+            }
         }
         System.out.println("    " + filesList[length - 1].getName());
         for (int i = 0; i < length; i++) {
