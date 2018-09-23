@@ -1,91 +1,129 @@
-import java.io.*;
-import java.util.*;
-import java.lang.Math;
-class Substring {
-    Substring() {
+import java.util.Scanner;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
 
+/**this class is to maintain.
+*complete details of two files.
+*/
+class Data {
+    /** this is an empty constructor.
+    */
+    Data() {
     }
-    public String toString(File givenFile) {
-        String result = "";
+    /**this method is to convert the.
+    *file document text to string
+    *@param file File
+    *@return str returns string of that text.
+    */
+    public static String toText(final File file) {
+        String str = "";
         try {
-            Scanner s = new Scanner(new FileReader(givenFile));
-            StringBuilder sb = new StringBuilder();
-            while (s.hasNext()) {
-                sb.append(s.next());
-                sb.append(" ");
+            Scanner input = new Scanner(new FileReader(file));
+            StringBuilder text = new StringBuilder();
+            while (input.hasNext()) {
+                text.append(input.next());
+                text.append(" ");
             }
-            s.close();
-            result = sb.toString();
+            input.close();
+            str = text.toString();
         } catch (FileNotFoundException e) {
-            System.out.println("no file");
+            System.out.println("No file");
         }
-        return result;
+        return str;
     }
-    public double findLCS(String firstString, String secondString) {
-        int lengthOne = firstString.length();
-        int lengthTwo = secondString.length();
+    /**this method is to give the.
+     *document distance.
+     *@param textOne first file string
+     *@param textTwo second file string
+     *@return document distance
+     */
+
+    public double stringMatching(final String textOne, final String textTwo) {
+        int lengthOne = textOne.length();
+        int lengthTwo = textTwo.length();
         double totalLength = lengthOne + lengthTwo;
-        int[][] tempMatrix = new int[lengthOne + 1][lengthTwo + 1];
-        double result = 0;
-        double lcsValue = 0;
-        for (int i = 0; i <= lengthOne; i++) {
-            for (int j = 0; j <= lengthTwo; j++) {
-                if (i == 0 || j == 0) {
-                    tempMatrix[i][j] = 0;
-                } else if (firstString.charAt(i - 1) == secondString.charAt(j - 1)) {
-                    tempMatrix[i][j] = tempMatrix[i - 1][j - 1] + 1;
-                } else {
-                    tempMatrix[i][j] = 0;
-                }
-                if (result < tempMatrix[i][j]) {
-                    result = tempMatrix[i][j];
+        int max = 0;
+        double lcs = 0;
+        final int hundred = 100;
+        int[][] array = new int[lengthOne][lengthTwo];
+        for (int i = 0; i < lengthOne; i++) {
+            for (int j = 0; j < lengthTwo; j++) {
+                if (textOne.charAt(i) == textTwo.charAt(j)) {
+                    if (i == 0 || j == 0) {
+                        array[i][j] = 1;
+                    } else {
+                        array[i][j] = array[i - 1][j - 1] + 1;
+                    }
+                    if (max < array[i][j]) {
+                        max = array[i][j];
+                    }
                 }
             }
         }
-        lcsValue = ((result * 2) / totalLength) * 100;
-        // System.out.println((int)lcsValue);
-        return Math.round(lcsValue * 100D) / 100;
+        lcs = (((max * 2) / totalLength) * hundred);
+        return lcs;
     }
 }
-
-
-class Solution {
-    Solution() {
+/** this is the solution class.
+*/
+public final class Solution {
+    /** an empty constructor.
+    */
+    private Solution() {
 
     }
-    public static void main(String[] args) {
-        try {
-            Substring s = new Substring();
-            String path;
-            Scanner scan = new Scanner(System.in);
-            path = scan.nextLine();
-            File folder = new File(path);
-            File[] filesList = folder.listFiles();
-            int length = filesList.length;
-            double[][] matrix = new double[length][length];
-            for (int i = 0; i < length; i++) {
-                for (int j = 0; j < length; j++) {
-                    matrix[i][j] = s.findLCS(s.toString(filesList[i]), s.toString(filesList[j]));
-                }
-            }
-            for (int i = 0; i < filesList.length - 1; i++) {
-                if (i == 0) {
-                    System.out.print("\t     " + filesList[i].getName());
+    /**
+     * this is main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        try  {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        File files = new File(input);
+        Data obj = new Data();
+        File[] fileList = files.listFiles();
+        int length = fileList.length;
+        double maxValue = 0;
+        final int hundred = 100;
+        String result = "";
+        double[][] fileMatrix = new double[length][length];
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (i == j) {
+                    fileMatrix[i][j] = hundred;
                 } else {
-                    System.out.print("    " + filesList[i].getName());
+                    fileMatrix[i][j] = obj.stringMatching(
+                        obj.toText(fileList[i]), obj.toText(fileList[j]));
+                    if (maxValue < fileMatrix[i][j]) {
+                        maxValue = fileMatrix[i][j];
+                        result = "Maximum similarity is between "
+                        + fileList[i].getName() + " and "
+                        + fileList[j].getName();
+                    }
                 }
             }
-            System.out.println("    " + filesList[length - 1].getName());
-            for (int i = 0; i < length; i++) {
-                System.out.print(filesList[i].getName() + "\t ");
-                for (int j = 0; j < length; j++) {
-                    System.out.print(matrix[i][j] + "        ");
-                }
-                System.out.println();
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println("Empty Directory");
         }
-
+        System.out.print("      \t");
+        for (int i = 0; i < length - 1; i++) {
+            System.out.print("\t" + fileList[i].getName());
+        }
+        System.out.println("\t" + fileList[length - 1].getName());
+        for (int i = 0; i < length; i++) {
+            System.out.print(fileList[i].getName() + "\t");
+            for (int j = 0; j < length; j++) {
+                    System.out.print(
+                        String.format("%.1f", fileMatrix[i][j]) + "\t\t");
+            }
+            System.out.println();
+        }
+     System.out.println(result);
+    } catch (NoSuchElementException e) {
+        System.out.println("Empty Directory");
+    }
     }
 }
+
