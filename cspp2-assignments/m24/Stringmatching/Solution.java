@@ -7,10 +7,10 @@ import java.util.NoSuchElementException;
 /**this class is to maintain.
 *complete details of two files.
 */
-class Data {
+class StringMatching {
     /** this is an empty constructor.
     */
-    Data() {
+    StringMatching() {
     }
     /**this method is to convert the.
     *file document text to string
@@ -84,7 +84,7 @@ public final class Solution {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         File files = new File(input);
-        Data obj = new Data();
+        StringMatching obj = new StringMatching();
         File[] fileList = files.listFiles();
         int length = fileList.length;
         double maxValue = 0;
