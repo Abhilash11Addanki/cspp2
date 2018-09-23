@@ -8,10 +8,10 @@ import java.util.NoSuchElementException;
 /**this class is to maintain.
 *complete details of two files.
 */
-class Data {
+class BagOfWords {
     /** this is an empty constructor.
     */
-    Data() {
+    BagOfWords() {
     }
     /**this method is to convert the.
     *file document text to string
@@ -111,7 +111,7 @@ public final class Solution {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         File files = new File(input);
-        Data obj = new Data();
+        BagOfWords obj = new BagOfWords();
         File[] fileList = files.listFiles();
         int length = fileList.length;
         int maxValue = 0;
